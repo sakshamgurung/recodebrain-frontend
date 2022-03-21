@@ -1,0 +1,55 @@
+.card {
+	display: grid;
+	grid-template-rows: auto minmax(80px, auto) 70px;
+	gap: 0;
+}
+
+.featuredImage {
+	position: relative;
+	max-width: 100%;
+	height: 300px;
+}
+
+.storyTitle {
+	font-size: larger;
+	font-weight: bold;
+	text-align: justify;
+	padding: 10px;
+}
+
+.storyTitle:hover {
+	text-decoration: underline;
+}
+
+.meta {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin: 10px;
+}
+
+.profileMeta {
+	flex: 1;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.profileImage {
+	position: relative;
+	width: 50px;
+	height: 50px;
+}
+
+.profileName {
+	padding-left: 15px;
+	font-size: small;
+}
+
+.storyMeta {
+	flex: 1;
+	text-align: end;
+	padding-top: 4px;
+	font-family: "Courier New", Courier, monospace;
+	font-size: small;
+}
