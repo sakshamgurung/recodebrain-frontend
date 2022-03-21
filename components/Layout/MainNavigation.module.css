@@ -1,0 +1,36 @@
+.header {
+	position: fixed;
+	top: 0px;
+	z-index: 40;
+	width: 100%;
+	height: 4rem;
+	background-color: steelblue;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 5%;
+	transition: top 0.3s;
+}
+
+.headerHidden {
+	top: -100px;
+}
+
+.logo {
+	font-size: x-large;
+	font-weight: bold;
+}
+
+.nav ul {
+	font-size: medium;
+	font-weight: bold;
+	list-style: none;
+	display: flex;
+	align-items: baseline;
+	margin: 0;
+	padding: 0;
+}
+
+.nav li {
+	margin: 10px 15px;
+}
