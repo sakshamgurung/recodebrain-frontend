@@ -1,0 +1,18 @@
+.content {
+	width: 70%;
+	max-width: 80rem;
+	margin: 7em auto;
+}
+
+.content p {
+}
+
+.content .image {
+	width: 100%;
+	width: 600px;
+}
+
+@media (min-width: 768px) {
+	.content {
+	}
+}

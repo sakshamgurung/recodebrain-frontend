@@ -51,8 +51,8 @@ function MainNavigation() {
 			<nav className={classes.nav}>
 				<ul>
 					<li>
-						<Link href="/about">
-							<a>About</a>
+						<Link href="/">
+							<a>Home</a>
 						</Link>
 					</li>
 					<li>
@@ -63,6 +63,11 @@ function MainNavigation() {
 					<li>
 						<Link href="/topics">
 							<a>Topics</a>
+						</Link>
+					</li>
+					<li>
+						<Link href="/about">
+							<a>About</a>
 						</Link>
 					</li>
 				</ul>

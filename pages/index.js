@@ -1,7 +1,7 @@
 import { Fragment } from "react/cjs/react.production.min";
 
-import StoryFeatured from "../components/Stories/StoryFeatured";
-import StoryGrid from "../components/Stories/StoryGrid";
+import StoryFeatured from "../components/stories/StoryFeatured";
+import StoryGrid from "../components/stories/StoryGrid";
 import Divider from "../components/ui/DividerLink";
 
 function HomePage() {

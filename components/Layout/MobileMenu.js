@@ -14,8 +14,8 @@ function MobileMenu({ isOpen, onClose }) {
 			</div>
 			<ul>
 				<li>
-					<Link href="/about">
-						<a onClick={onClose}>About</a>
+					<Link href="/">
+						<a onClick={onClose}>Home</a>
 					</Link>
 				</li>
 				<li>
@@ -26,6 +26,11 @@ function MobileMenu({ isOpen, onClose }) {
 				<li>
 					<Link href="/topics">
 						<a onClick={onClose}>Topics</a>
+					</Link>
+				</li>
+				<li>
+					<Link href="/about">
+						<a onClick={onClose}>About</a>
 					</Link>
 				</li>
 			</ul>
