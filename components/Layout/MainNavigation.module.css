@@ -21,6 +21,15 @@
 	font-weight: bold;
 }
 
+.mobileMenu {
+	display: none;
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+}
+
 .nav ul {
 	font-size: medium;
 	font-weight: bold;
@@ -33,4 +42,15 @@
 
 .nav li {
 	margin: 10px 15px;
+}
+
+@media (max-width: 640px) {
+	.nav {
+		display: none;
+		transform: 0.3s linear;
+	}
+	.mobileMenu {
+		display: inline;
+		transform: 0.3s linear;
+	}
 }

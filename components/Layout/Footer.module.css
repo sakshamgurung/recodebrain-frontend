@@ -1,7 +1,8 @@
 .footer {
-	height: 10rem;
+	min-height: 12rem;
 	background-color: steelblue;
 	display: flex;
+
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 5%;
@@ -40,11 +41,36 @@
 	gap: 0.5em;
 }
 
+.newsletterField {
+	padding: 10px 10px;
+}
+
+.subscribeBtn {
+	display: flex;
+	justify-content: center;
+	background-color: aquamarine;
+	padding: 10px 10px;
+}
+
 .socialLinks {
-	margin-top: 0.5em;
+	margin-top: 1em;
+	margin-bottom: 1em;
 	display: flex;
 }
 
 .socialLinks li {
 	margin: 5px 15px 5px 0px;
+}
+
+@media (max-width: 768px) {
+	.footer {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.newsletterForm {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+	}
 }
