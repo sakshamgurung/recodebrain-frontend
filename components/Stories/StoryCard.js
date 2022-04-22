@@ -3,28 +3,23 @@ import Link from "next/link";
 
 import classes from "./StoryCard.module.css";
 
-function StoryCard() {
+function StoryCard({ story }) {
+	const { slug, title, date, image, readTime, author, username } = story;
+	const imagePath = `/images/stories/${slug}/${image}`;
+	const linkPath = `/${slug}`;
+
 	return (
 		<article className={classes.card}>
 			<div className={classes.featuredImage}>
-				<Link href="#">
+				<Link href={linkPath}>
 					<a>
-						<Image
-							src="/images/test/post-tumbnail-2.jpg"
-							alt="featured image"
-							layout="fill"
-							objectFit="cover"
-						/>
+						<Image src={imagePath} alt={story.slug} layout="fill" objectFit="cover" />
 					</a>
 				</Link>
 			</div>
 			<div className={classes.storyTitle}>
-				<Link href="#">
-					<a>
-						The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-						aliqua.
-					</a>
+				<Link href={linkPath}>
+					<a>{title}</a>
 				</Link>
 			</div>
 			<div className={classes.meta}>
@@ -46,15 +41,15 @@ function StoryCard() {
 					<div className={classes.profileName}>
 						<Link href="#">
 							<a>
-								<div>@Username</div>
+								<div>@{username}</div>
 							</a>
 						</Link>
-						<div>Author name</div>
+						<div>{author}</div>
 					</div>
 				</div>
 				<div className={classes.storyMeta}>
-					<div>Published date</div>
-					<div>Read time</div>
+					<div>{date}</div>
+					<div>{readTime}</div>
 				</div>
 			</div>
 		</article>

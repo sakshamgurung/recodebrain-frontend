@@ -1,18 +1,14 @@
-.content {
-	width: 70%;
-	max-width: 80rem;
-	margin: 7em auto;
-}
-
-.content p {
-}
+/* .content p {
+} */
 
 .content .image {
 	width: 100%;
-	width: 600px;
+	max-width: 600px;
+	margin-top: 2em;
+	margin-bottom: 2em;
 }
 
 @media (min-width: 768px) {
-	.content {
-	}
+	/* .content {
+	} */
 }

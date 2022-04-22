@@ -12,8 +12,10 @@ function StoryHeader({ title, excerpt, image }) {
 					className={classes.featuredImage}
 					src={image}
 					alt={title}
-					layout="fill"
-					objectFit="cover"
+					width={1200}
+					height={650}
+					// layout="fill"
+					// objectFit="cover"
 				/>
 			</div>
 		</header>

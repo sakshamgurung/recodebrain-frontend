@@ -1,12 +1,13 @@
 import StoryCard from "./StoryCard";
 import classes from "./StoryGrid.module.css";
 
-function StoryGrid() {
+function StoryGrid({ stories }) {
 	return (
 		<div className={classes.storyGrid}>
-			<StoryCard />
-			<StoryCard />
-			<StoryCard />
+			{/* only three stories on a grid*/}
+			{stories.map((story) => {
+				return <StoryCard key={story.slug} story={story} />;
+			})}
 		</div>
 	);
 }
