@@ -6,7 +6,7 @@ function StoryFeatured({ stories }) {
 		<div className={classes.storyFeatured}>
 			{/* only three featured stories */}
 			{stories.map((story) => {
-				return <StoryCard story={story} />;
+				return <StoryCard key={story.slug} story={story} />;
 			})}
 		</div>
 	);

@@ -7,10 +7,10 @@ function Story({ story }) {
 	const imagePath = `/images/stories/${story.slug}/${story.image}`;
 
 	return (
-		<article className={classes.article}>
+		<div className={classes.story}>
 			<StoryHeader title={story.title} excerpt={story.excerpt} image={imagePath} />
 			<StoryContent slug={story.slug} content={story.content} />
-		</article>
+		</div>
 	);
 }
 
