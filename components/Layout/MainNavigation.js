@@ -4,13 +4,13 @@ import Link from "next/link";
 import { FaHamburger } from "react-icons/fa";
 import FocusLock from "react-focus-lock";
 
-import classes from "./MainNavigation.module.css";
+import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
 
 function MainNavigation() {
 	const [show, setShow] = useState(true);
 	const [lastScrollY, setLastScrollY] = useState(0);
-	const [openMobileMenu, setOpenMobileMenu] = useState(false);
+	const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
 
 	const controlNavbar = () => {
 		if (typeof window !== "undefined") {
@@ -32,46 +32,33 @@ function MainNavigation() {
 		};
 	}, [lastScrollY]);
 
-	const toggleMobileMenu = () => {
-		setOpenMobileMenu(!openMobileMenu);
+	const openMobileMenu = () => {
+		setIsOpenMobileMenu(true);
+		const body = document.body;
+		body.style.overflowY = "hidden";
+	};
+
+	const closeMobileMenu = () => {
+		setIsOpenMobileMenu(false);
+		const body = document.body;
+		body.style.overflowY = "";
 	};
 
 	return (
-		<header className={`${classes.header}`}>
-			{/* <header className={`${classes.header} ${!show && classes.headerHidden}`}> */}
+		<header className="fixed top-0 z-10 w-full h-16 bg-primary-600 text-slate-100 flex justify-between items-center px-[2%]">
+			{/* <header className={`${classes.header} ${!show && -top-28}`}> */}
 			<Link href="/">
-				<a className={classes.logo}>RecodeBrain</a>
+				<a className="text-3xl font-medium">RecodeBrain</a>
 			</Link>
-			<div className={classes.mobileMenu}>
-				<FocusLock disabled={!openMobileMenu}>
-					<FaHamburger size="1.5em" onClick={toggleMobileMenu} />
-					<MobileMenu isOpen={openMobileMenu} onClose={toggleMobileMenu} />
+			<div className="inline md:hidden">
+				<FocusLock disabled={!isOpenMobileMenu}>
+					<FaHamburger size="26" onClick={openMobileMenu} />
+					<MobileMenu isOpen={isOpenMobileMenu} onClose={closeMobileMenu} />
 				</FocusLock>
 			</div>
-			<nav className={classes.nav}>
-				<ul>
-					<li>
-						<Link href="/">
-							<a>Home</a>
-						</Link>
-					</li>
-					<li>
-						<Link href="/series">
-							<a>Series</a>
-						</Link>
-					</li>
-					<li>
-						<Link href="/topics">
-							<a>Topics</a>
-						</Link>
-					</li>
-					<li>
-						<Link href="/about">
-							<a>About</a>
-						</Link>
-					</li>
-				</ul>
-			</nav>
+			<div className="hidden md:inline">
+				<DesktopMenu />
+			</div>
 		</header>
 	);
 }

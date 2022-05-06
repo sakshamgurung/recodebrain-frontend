@@ -1,15 +1,13 @@
 import Image from "next/image";
 
-import classes from "./StoryHeader.module.css";
-
 function StoryHeader({ title, excerpt, image }) {
 	return (
-		<header className={classes.header}>
-			<h1 className={classes.title}>{title}</h1>
-			<p className={classes.excerpt}>{excerpt}</p>
-			<div className={classes.featuredImageContainer}>
+		<header className="flex flex-col mt-7 mb-14">
+			<h1 className="text-gray-800 text-4xl font-bold mb-2">{title}</h1>
+			<p className="text-gray-700 mb-7">{excerpt}</p>
+			<div className="w-full">
 				<Image
-					className={classes.featuredImage}
+					className="rounded-md md:h-80"
 					src={image}
 					alt={title}
 					width={1200}

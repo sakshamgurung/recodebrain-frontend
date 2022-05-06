@@ -11,9 +11,13 @@
 }
 
 body {
+	--background-color: hsl(265, 55%, 96%);
+	--typo-color-1: rgb(45, 45, 45);
+	--typo-color-2: rgb(242, 242, 242);
+
 	font-family: "Poppins", Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
-	color: #fff;
-	background-color: black;
+	color: var(--typo-color-1);
+	background-color: var(--background-color);
 }

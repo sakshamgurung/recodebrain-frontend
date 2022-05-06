@@ -6,7 +6,7 @@ function Layout(props) {
 	return (
 		<Fragment>
 			<MainNavigation />
-			<main style={{ marginTop: "4rem" }}>{props.children}</main>
+			<main className="mt-16">{props.children}</main>
 			<Footer />
 		</Fragment>
 	);
