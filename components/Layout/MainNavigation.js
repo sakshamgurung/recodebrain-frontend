@@ -8,29 +8,29 @@ import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
 
 function MainNavigation() {
-	const [show, setShow] = useState(true);
-	const [lastScrollY, setLastScrollY] = useState(0);
+	// const [show, setShow] = useState(true);
+	// const [lastScrollY, setLastScrollY] = useState(0);
 	const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
 
-	const controlNavbar = () => {
-		if (typeof window !== "undefined") {
-			if (window.scrollY > lastScrollY) {
-				setShow(false);
-			} else {
-				setShow(true);
-			}
+	// const controlNavbar = () => {
+	// 	if (typeof window !== "undefined") {
+	// 		if (window.scrollY > lastScrollY) {
+	// 			setShow(false);
+	// 		} else {
+	// 			setShow(true);
+	// 		}
 
-			setLastScrollY(window.scrollY);
-		}
-	};
+	// 		setLastScrollY(window.scrollY);
+	// 	}
+	// };
 
-	useEffect(() => {
-		window.addEventListener("scroll", controlNavbar);
+	// useEffect(() => {
+	// 	window.addEventListener("scroll", controlNavbar);
 
-		return () => {
-			window.removeEventListener("scroll", controlNavbar);
-		};
-	}, [lastScrollY]);
+	// 	return () => {
+	// 		window.removeEventListener("scroll", controlNavbar);
+	// 	};
+	// }, [lastScrollY]);
 
 	const openMobileMenu = () => {
 		setIsOpenMobileMenu(true);

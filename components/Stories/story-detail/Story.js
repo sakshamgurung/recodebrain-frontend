@@ -2,7 +2,7 @@ import StoryContent from "./StoryContent";
 import StoryHeader from "./StoryHeader";
 
 function Story({ story }) {
-	const imagePath = `/images/stories/${story.slug}/${story.image}`;
+	const imagePath = `${process.env.NEXT_PUBLIC_STRAPI_DOMAIN}${story.coverImage.url}`;
 
 	return (
 		<div className="w-[1600] flex flex-col justify-center items-center m-auto">

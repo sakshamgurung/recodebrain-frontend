@@ -9,7 +9,7 @@ import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
 SyntaxHighlighter.registerLanguage("js", js);
 SyntaxHighlighter.registerLanguage("css", css);
 
-function StoryContent({ slug, content }) {
+function StoryContent({ content }) {
 	const components = {
 		p: ({ node, children }) => {
 			if (node.children[0].tagName === "img") {
@@ -18,7 +18,7 @@ function StoryContent({ slug, content }) {
 				return (
 					<div className="w-full mt-8 mb-8">
 						<Image
-							src={`/images/stories/${slug}/${image.properties.src}`}
+							src={image.properties.src}
 							alt={image.properties.alt}
 							width={1200}
 							height={650}
@@ -44,8 +44,10 @@ function StoryContent({ slug, content }) {
 	};
 
 	return (
-		<article className="prose prose-lg max-w-3xl bg-white px-5 py-4">
-			<ReactMarkdown remarkPlugins={[remarkGfm]} children={content} components={components} />
+		<article className="max-w-3xl px-5 py-4 prose prose-lg bg-white">
+			<ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
+				{content}
+			</ReactMarkdown>
 		</article>
 	);
 }

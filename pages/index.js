@@ -4,21 +4,21 @@ import StoryFeatured from "../components/stories/StoryFeatured";
 import StoryGrid from "../components/stories/StoryGrid";
 import Divider from "../components/ui/DividerLink";
 
-import { getTestStories } from "../lib/stories-util";
+import { loadHomePage } from "../lib/api-util";
 
 function HomePage(props) {
-	const { stories } = props;
+	const { homePageData } = props;
 
 	return (
 		<Fragment>
-			<section style={{ margin: "auto", maxWidth: "1600px" }}>
-				<StoryFeatured stories={stories.featuredStories} />
+			<section className="m-auto max-w-[1600px]">
+				<StoryFeatured stories={homePageData.featuredStories} />
 			</section>
-			<div style={{ margin: "auto", maxWidth: "1200px" }}>
-				{stories.featuredTopics.map((topic) => (
-					<section key={topic.header}>
-						<Divider link="#">{topic.header}</Divider>
-						<StoryGrid stories={topic.stories} />
+			<div className="m-auto max-w-[1200px]">
+				{homePageData.storyGrids.map((storyGrid) => (
+					<section key={storyGrid.topic.slug}>
+						<Divider link={`/topics/${storyGrid.topic.slug}`}>{storyGrid.topic.name}</Divider>
+						<StoryGrid stories={storyGrid.stories} />
 					</section>
 				))}
 			</div>
@@ -27,11 +27,11 @@ function HomePage(props) {
 }
 
 export async function getStaticProps() {
-	const stories = getTestStories();
+	const homePageData = await loadHomePage();
 
 	return {
 		props: {
-			stories: stories,
+			homePageData,
 		},
 	};
 }

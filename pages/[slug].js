@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 
 import Story from "../components/stories/story-detail/Story";
-import { getStoryData, getStoriesFiles } from "../lib/stories-util";
+import { loadStoryList, loadStory } from "../lib/api-util";
 
 function StoryDetailPage(props) {
 	return (
@@ -13,22 +13,22 @@ function StoryDetailPage(props) {
 
 export async function getStaticProps(context) {
 	const { slug } = context.params;
-	const storyData = getStoryData(slug);
+	const story = await loadStory(slug);
 
 	return {
 		props: {
-			story: storyData,
+			story,
 		},
 		revalidate: 600,
 	};
 }
 
 export async function getStaticPaths() {
-	const storiesFilenames = getStoriesFiles();
-	const slugs = storiesFilenames.map((fileName) => fileName.replace(/\.md$/, ""));
+	const storyList = await loadStoryList();
+	const slugs = storyList.data.map((story) => ({ params: { slug: story.slug } }));
 
 	return {
-		paths: slugs.map((slug) => ({ params: { slug: slug } })),
+		paths: slugs,
 		fallback: false,
 	};
 }
