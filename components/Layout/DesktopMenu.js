@@ -10,13 +10,13 @@ function DesktopMenu() {
 					</Link>
 				</li>
 				<li>
-					<Link href="/series">
-						<a>Series</a>
+					<Link href="/topics">
+						<a>Topics</a>
 					</Link>
 				</li>
 				<li>
-					<Link href="/topics">
-						<a>Topics</a>
+					<Link href="/serial">
+						<a>Serial</a>
 					</Link>
 				</li>
 				<li>

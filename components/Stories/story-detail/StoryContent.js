@@ -14,6 +14,9 @@ function StoryContent({ content }) {
 		p: ({ node, children }) => {
 			if (node.children[0].tagName === "img") {
 				const image = node.children[0];
+				const metastring = image.properties.alt;
+				const hasCaption = metastring?.toLowerCase().includes("{caption:");
+				const caption = metastring?.match(/{caption: (.*?)}/)?.pop();
 
 				return (
 					<div className="w-full mt-8 mb-8">
@@ -23,6 +26,9 @@ function StoryContent({ content }) {
 							width={1200}
 							height={650}
 						/>
+						{hasCaption ? (
+							<div className="font-mono text-sm text-center text-gray-600">{caption}</div>
+						) : null}
 					</div>
 				);
 			}

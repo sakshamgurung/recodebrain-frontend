@@ -1,13 +1,13 @@
 import _ from "lodash";
+import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineSmile } from "react-icons/ai";
-import moment from "moment";
 
-function StoryCard({ story }) {
-	const { slug, title, publishedAt, coverImage, readTime, author } = story;
+function SerialCard({ serial }) {
+	const { slug, title, publishedAt, coverImage, author } = serial;
 	const coverImagePath = `${process.env.NEXT_PUBLIC_STRAPI_DOMAIN}${coverImage.url}`;
-	const linkPath = `/${slug}`;
+	const linkPath = `/serial/${slug}`;
 	const authorName = `${author.firstName} ${author.lastName}`;
 	const publishedDate = moment(publishedAt).format("MMM Do YYYY");
 	let profilePicturePath = !_.isNull(author.profilePicture?.data)
@@ -21,12 +21,8 @@ function StoryCard({ story }) {
 					<div className="relative max-w-full h-[300px]">
 						<Image
 							className="duration-300 ease-in hover:scale-110"
-							// unoptimized
-							// loader={({ src }) => {
-							// 	return src;
-							// }}
 							src={coverImagePath}
-							alt={story.slug}
+							alt={serial.slug}
 							layout="fill"
 							objectFit="cover"
 						/>
@@ -66,13 +62,12 @@ function StoryCard({ story }) {
 						</Link>
 					</div>
 				</div>
-				<div className="flex flex-col font-mono text-sm">
+				<div className="flex flex-col pt-1 font-mono text-sm">
 					<time>{publishedDate}</time>
-					<time>{readTime} min read</time>
 				</div>
 			</div>
 		</article>
 	);
 }
 
-export default StoryCard;
+export default SerialCard;

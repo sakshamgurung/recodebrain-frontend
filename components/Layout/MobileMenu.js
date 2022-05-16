@@ -36,19 +36,19 @@ function MobileMenu({ isOpen, onClose }) {
 					</Link>
 				</li>
 				<li className={listStyle}>
-					<Link href="/series">
+					<Link href="/topics">
 						<a className={anchorStyle} onClick={onClose}>
-							<AiOutlineBars className="flex-1 mr-4" size="26" color="black" />
-							<span className="flex-[10]">Series</span>
+							<AiFillTag className="flex-1 mr-4" size="26" color="black" />
+							<span className="flex-[10]">Topics</span>
 							<AiOutlineRight className="flex-1" size="26" color="black" />
 						</a>
 					</Link>
 				</li>
 				<li className={listStyle}>
-					<Link href="/topics">
+					<Link href="/serial">
 						<a className={anchorStyle} onClick={onClose}>
-							<AiFillTag className="flex-1 mr-4" size="26" color="black" />
-							<span className="flex-[10]">Topics</span>
+							<AiOutlineBars className="flex-1 mr-4" size="26" color="black" />
+							<span className="flex-[10]">Serial</span>
 							<AiOutlineRight className="flex-1" size="26" color="black" />
 						</a>
 					</Link>

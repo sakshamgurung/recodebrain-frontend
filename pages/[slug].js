@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 
 import Story from "../components/stories/story-detail/Story";
-import { loadStoryList, loadStory } from "../lib/api-util";
+import { loadStoryList, loadStoryDetail } from "../lib/api-util";
 
 function StoryDetailPage(props) {
 	return (
@@ -13,7 +13,7 @@ function StoryDetailPage(props) {
 
 export async function getStaticProps(context) {
 	const { slug } = context.params;
-	const story = await loadStory(slug);
+	const story = await loadStoryDetail(slug);
 
 	return {
 		props: {

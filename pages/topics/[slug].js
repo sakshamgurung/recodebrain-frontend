@@ -3,6 +3,7 @@ import _ from "lodash";
 import ReactPagination from "react-paginate";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
+import FullGrid from "../../components/ui/FullGrid";
 import StoryCard from "../../components/stories/StoryCard";
 import { loadStoriesUnderTopic, loadTopics, loadTopicDetail } from "../../lib/api-util";
 
@@ -41,11 +42,11 @@ function TopicPage(props) {
 	return (
 		<div className="mt-8 m-auto max-w-[1200px]">
 			{topicDetail}
-			<div className="mt-4 grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-4">
+			<FullGrid className="mt-4">
 				{stories.data.map((story) => (
 					<StoryCard key={story.slug} story={story} />
 				))}
-			</div>
+			</FullGrid>
 			<ReactPagination
 				previousLabel={<MdKeyboardArrowLeft size="24" />}
 				nextLabel={<MdKeyboardArrowRight size="24" />}
