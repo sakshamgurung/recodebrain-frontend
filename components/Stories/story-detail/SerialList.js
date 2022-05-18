@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 function SerialList({ serialDetail, stories, currentPath }) {
 	return (
-		<nav className="w-2/4 border-[1px] border-gray-400 shadow-md rounded-md overflow-hidden bg-zinc-100 mb-4">
+		<div className="max-w-3xl w-full border-[1px] border-gray-300 shadow-md rounded-md bg-zinc-100 mb-4">
 			<ul>
 				<li key={serialDetail.slug} className=" border-b-[1px] text-primary-600">
 					<Link href={`/serial/${serialDetail.slug}`}>
@@ -14,7 +14,7 @@ function SerialList({ serialDetail, stories, currentPath }) {
 					const isActive = currentPath === `/${story.slug}`;
 
 					return (
-						<li key={story.slug} className=" border-b-[1px]">
+						<li key={story.slug} className="border-b-[1px]">
 							<Link href={`/${story.slug}`}>
 								<a
 									className={classNames(
@@ -33,14 +33,16 @@ function SerialList({ serialDetail, stories, currentPath }) {
 									>
 										{index + 1}
 									</div>
-									<span>{story.title}</span>
+									<span className="overflow-hidden whitespace-nowrap text-ellipsis w-[90%]">
+										{story.title}
+									</span>
 								</a>
 							</Link>
 						</li>
 					);
 				})}
 			</ul>
-		</nav>
+		</div>
 	);
 }
 

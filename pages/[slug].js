@@ -1,12 +1,12 @@
 import { Fragment } from "react";
 
 import Story from "../components/stories/story-detail/Story";
-import { loadStoryList, loadStoryDetail } from "../lib/api-util";
+import { loadStoryList, loadStoryDetail, loadRecommendedStories } from "../lib/api-util";
 
 function StoryDetailPage(props) {
 	return (
 		<Fragment>
-			<Story story={props.story} />
+			<Story story={props.story} recommendedStories={props.recommendedStories} />
 		</Fragment>
 	);
 }
@@ -14,10 +14,12 @@ function StoryDetailPage(props) {
 export async function getStaticProps(context) {
 	const { slug } = context.params;
 	const story = await loadStoryDetail(slug);
+	const recommendedStories = await loadRecommendedStories({ slug, createdAt: story.createdAt });
 
 	return {
 		props: {
 			story,
+			recommendedStories,
 		},
 		revalidate: 600,
 	};

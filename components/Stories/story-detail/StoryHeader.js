@@ -3,9 +3,10 @@ import Link from "next/link";
 import _ from "lodash";
 import { AiOutlineSmile } from "react-icons/ai";
 import moment from "moment";
+import RelatedTopics from "./RelatedTopics";
 
 function StoryHeader({ title, excerpt, image, author, meta }) {
-	const { publishedAt, readTime } = meta;
+	const { publishedAt, readTime, topics } = meta;
 	const authorName = `${author.firstName} ${author.lastName}`;
 	const publishedDate = moment(publishedAt).format("MMM Do YYYY");
 	let profilePicturePath = !_.isNull(author.profilePicture.data)
@@ -13,8 +14,9 @@ function StoryHeader({ title, excerpt, image, author, meta }) {
 		: null;
 
 	return (
-		<header className="flex flex-col max-w-4xl mb-10 mt-7">
-			<h1 className="mb-2 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+		<header className="flex flex-col w-full max-w-4xl mb-10 mt-7">
+			<RelatedTopics topics={topics} />
+			<h1 className="py-1 mb-2 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
 				{title}
 			</h1>
 			<p className="text-gray-700">{excerpt}</p>

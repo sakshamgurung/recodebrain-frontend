@@ -34,9 +34,9 @@ function StoryCard({ story }) {
 				</a>
 			</Link>
 
-			<div className="flex p-2 text-xl font-semibold text-justify hover:underline">
+			<div className="flex p-2 text-xl font-semibold hover:underline">
 				<Link href={linkPath}>
-					<a className="flex-1">{title}</a>
+					<a className="flex-1 line-clamp-3">{title}</a>
 				</Link>
 			</div>
 			<div className="flex items-start justify-between m-2">

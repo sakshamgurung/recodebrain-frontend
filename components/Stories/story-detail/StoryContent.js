@@ -50,7 +50,7 @@ function StoryContent({ content }) {
 	};
 
 	return (
-		<article className="max-w-3xl px-5 py-4 prose prose-lg bg-white">
+		<article className="w-full max-w-3xl px-5 py-4 prose prose-lg bg-white">
 			<ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
 				{content}
 			</ReactMarkdown>

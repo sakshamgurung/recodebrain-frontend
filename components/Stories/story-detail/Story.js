@@ -1,8 +1,11 @@
+import _ from "lodash";
+
 import StoryContent from "./StoryContent";
 import StoryHeader from "./StoryHeader";
 import SerialList from "./SerialList";
+import RelatedStories from "./RelatedStories";
 
-function Story({ story }) {
+function Story({ story, recommendedStories }) {
 	const imagePath = `${process.env.NEXT_PUBLIC_STRAPI_DOMAIN}${story.coverImage.url}`;
 
 	return (
@@ -16,6 +19,7 @@ function Story({ story }) {
 					publishedAt: story.publishedAt,
 					readTime: story.readTime,
 					updatedAt: story.updatedAt,
+					topics: story.topics,
 				}}
 			/>
 			{story.isSeries ? (
@@ -26,6 +30,7 @@ function Story({ story }) {
 				/>
 			) : null}
 			<StoryContent content={story.content} />
+			{!_.isEmpty(recommendedStories) ? <RelatedStories stories={recommendedStories} /> : null}
 		</div>
 	);
 }
