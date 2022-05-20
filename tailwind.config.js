@@ -18,7 +18,8 @@ module.exports = {
 				},
 			},
 			fontFamily: {
-				body: ["Poppins"],
+				body: ["Poppins", "Arial", "Helvetica", "sans-serif"],
+				code: ["JetBrains Mono", "Monaco", "Courier New", "monospace"],
 			},
 		},
 	},
