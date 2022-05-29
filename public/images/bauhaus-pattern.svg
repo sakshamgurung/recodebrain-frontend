@@ -1,0 +1,118 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMaxYMax slice">
+  <g transform="scale(1.6207455429497568)">
+    <rect x="0" y="0" width="617" height="617" fill="#ffffff" fill-opacity="0"/>
+    <g transform="translate(231.38,0) scale(3.8564999999999996) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#02307b" fill-opacity="0.7"/>
+    </g>
+    <polygon points="385.63,0 462.76,0 385.63,77.13" fill="#02307b" fill-opacity="0.7"/>
+    <rect x="462.75" y="0" width="77.125" height="77.125" fill="#ffffff" fill-opacity="0"/>
+    <g transform="translate(462.75,0) scale(1.9280000000000002) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#0b55c7"/>
+    </g>
+    <rect x="462.75" y="38.56" width="38.56" height="38.56" fill="#0b55c7"/>
+    <polygon points="501.31,38.56 539.87,38.56 539.87,77.12" fill="#02307b" fill-opacity="0.7"/>
+    <polygon points="539.88,0 617.01,0 539.88,77.13" fill="#0b55c7"/>
+    <polygon points="0,77.13 77.13,77.13 77.13,154.26" fill="#02307b" fill-opacity="0.7"/>
+    <polygon points="154.25,77.13 231.38,154.26 154.25,154.26" fill="#02307b" fill-opacity="0.7"/>
+    <rect x="231.38" y="77.13" width="77.13" height="77.13" fill="#02307b" fill-opacity="0.7"/>
+    <g transform="translate(308.5,77.13) scale(3.8564999999999996) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#0b55c7"/>
+    </g>
+    <g transform="translate(539.88,77.13) scale(3.8564999999999996) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#0b55c7"/>
+    </g>
+    <g transform="translate(0,154.25) scale(3.8564999999999996) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#02307b" fill-opacity="0.7"/>
+    </g>
+    <polygon points="154.26,154.25 154.26,231.38 77.13,231.38" fill="#02307b" fill-opacity="0.7"/>
+    <rect x="154.25" y="154.25" width="77.125" height="77.125" fill="#ffffff" fill-opacity="0"/>
+    <rect x="192.81" y="154.25" width="38.56" height="38.56" fill="#0b55c7"/>
+    <polygon points="192.81,192.81 231.37,192.81 192.81,231.37" fill="#02307b" fill-opacity="0.7"/>
+    <rect x="231.38" y="154.25" width="77.13" height="77.13" fill="#02307b" fill-opacity="0.7"/>
+    <polygon points="308.5,154.25 385.63,154.25 308.5,231.38" fill="#02307b" fill-opacity="0.7"/>
+    <rect x="385.625" y="154.25" width="77.125" height="77.125" fill="#ffffff" fill-opacity="0"/>
+    <polygon points="385.63,154.25 424.19,192.81 385.63,192.81" fill="#02307b" fill-opacity="0.7"/>
+    <polygon points="424.19,154.25 462.75,154.25 462.75,192.81" fill="#0b55c7"/>
+    <g transform="translate(424.19,192.81) scale(1.9280000000000002) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#0b55c7"/>
+    </g>
+    <rect x="462.75" y="154.25" width="77.13" height="77.13" fill="#0b55c7"/>
+    <rect x="539.88" y="154.25" width="77.13" height="77.13" fill="#0b55c7"/>
+    <g transform="translate(0,231.38) scale(3.8564999999999996) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#0b55c7"/>
+    </g>
+    <g transform="translate(77.13,231.38) scale(3.8564999999999996) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#0b55c7"/>
+    </g>
+    <polygon points="231.38,231.38 231.38,308.51 154.25,308.51" fill="#02307b" fill-opacity="0.7"/>
+    <polygon points="231.38,231.38 308.51,231.38 231.38,308.51" fill="#02307b" fill-opacity="0.7"/>
+    <rect x="462.75" y="231.375" width="77.125" height="77.125" fill="#ffffff" fill-opacity="0"/>
+    <g transform="translate(462.75,269.94) scale(1.9280000000000002) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#02307b" fill-opacity="0.7"/>
+    </g>
+    <g transform="translate(501.31,269.94) scale(1.9280000000000002) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#0b55c7"/>
+    </g>
+    <polygon points="539.88,231.38 617.01,231.38 617.01,308.51" fill="#0b55c7"/>
+    <rect x="0" y="308.5" width="77.125" height="77.125" fill="#ffffff" fill-opacity="0"/>
+    <polygon points="38.56,308.5 38.56,347.06 0,347.06" fill="#02307b" fill-opacity="0.7"/>
+    <g transform="translate(38.56,308.5) scale(1.9280000000000002) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#0b55c7"/>
+    </g>
+    <g transform="translate(0,347.06) scale(1.9280000000000002) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#0b55c7"/>
+    </g>
+    <rect x="38.56" y="347.06" width="38.56" height="38.56" fill="#0b55c7"/>
+    <g transform="translate(77.13,308.5) scale(3.8564999999999996) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#02307b" fill-opacity="0.7"/>
+    </g>
+    <rect x="154.25" y="308.5" width="77.13" height="77.13" fill="#0b55c7"/>
+    <rect x="231.38" y="308.5" width="77.13" height="77.13" fill="#02307b" fill-opacity="0.7"/>
+    <rect x="308.5" y="308.5" width="77.125" height="77.125" fill="#ffffff" fill-opacity="0"/>
+    <g transform="translate(308.5,308.5) scale(1.9280000000000002) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#0b55c7"/>
+    </g>
+    <g transform="translate(347.06,308.5) scale(1.9280000000000002) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#0b55c7"/>
+    </g>
+    <rect x="308.5" y="347.06" width="38.56" height="38.56" fill="#0b55c7"/>
+    <polygon points="385.63,308.5 462.76,308.5 385.63,385.63" fill="#0b55c7"/>
+    <rect x="154.25" y="385.63" width="77.13" height="77.13" fill="#02307b" fill-opacity="0.7"/>
+    <g transform="translate(308.5,385.63) scale(3.8564999999999996) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#0b55c7"/>
+    </g>
+    <polygon points="385.63,385.63 462.76,385.63 385.63,462.76" fill="#02307b" fill-opacity="0.7"/>
+    <g transform="translate(462.75,385.63) scale(3.8564999999999996) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#0b55c7"/>
+    </g>
+    <g transform="translate(539.88,385.63) scale(3.8564999999999996) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#0b55c7"/>
+    </g>
+    <polygon points="77.13,462.75 77.13,539.88 0,539.88" fill="#02307b" fill-opacity="0.7"/>
+    <rect x="231.375" y="462.75" width="77.125" height="77.125" fill="#ffffff" fill-opacity="0"/>
+    <g transform="translate(231.38,462.75) scale(1.9280000000000002) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#02307b" fill-opacity="0.7"/>
+    </g>
+    <polygon points="308.5,462.75 385.63,539.88 308.5,539.88" fill="#0b55c7"/>
+    <rect x="385.63" y="462.75" width="77.13" height="77.13" fill="#0b55c7"/>
+    <g transform="translate(462.75,462.75) scale(3.8564999999999996) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#0b55c7"/>
+    </g>
+    <rect x="539.88" y="462.75" width="77.13" height="77.13" fill="#02307b" fill-opacity="0.7"/>
+    <polygon points="0,539.88 77.13,617.01 0,617.01" fill="#02307b" fill-opacity="0.7"/>
+    <rect x="231.375" y="539.875" width="77.125" height="77.125" fill="#ffffff" fill-opacity="0"/>
+    <polygon points="308.5,539.88 308.5,578.44 269.94,578.44" fill="#02307b" fill-opacity="0.7"/>
+    <polygon points="269.94,578.44 269.94,617 231.38,617" fill="#02307b" fill-opacity="0.7"/>
+    <g transform="translate(269.94,578.44) scale(1.9280000000000002) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#02307b" fill-opacity="0.7"/>
+    </g>
+    <g transform="translate(385.63,539.88) scale(3.8564999999999996) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#02307b" fill-opacity="0.7"/>
+    </g>
+    <g transform="translate(462.75,539.88) scale(3.8564999999999996) rotate(0)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" fill="#02307b" fill-opacity="0.7"/>
+    </g>
+  </g>
+</svg>

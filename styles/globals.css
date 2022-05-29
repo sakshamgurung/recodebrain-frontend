@@ -32,5 +32,17 @@ body {
 }
 
 .copyCodeButton {
-	@apply z-10 absolute top-1 right-1 bg-slate-700 hover:bg-slate-600 border-[1px] border-gray-500 rounded-md uppercase text-sm p-[.4rem_.3rem_.1rem] text-slate-100;
+	@apply z-10 absolute top-2 -right-6 bg-slate-700 hover:bg-slate-600 border-[1px] border-gray-500 rounded-md uppercase text-sm p-[.4rem_.3rem_.1rem] text-slate-100;
+}
+
+.newsletter-input {
+	@apply p-2 text-gray-800 rounded-sm outline-none;
+}
+
+.newsletter-bg-before-pattern {
+	@apply before:rounded-l-md before:absolute before:content-[''] before:-z-10 before:w-full before:h-full before:bg-no-repeat before:left-0 before:top-0 before:bg-[url('/images/bauhaus-pattern.svg')];
+}
+
+.newsletter-bg-after-pattern {
+	@apply sm:after:block after:hidden after:rounded-l-md after:absolute after:content-[''] after:-z-10 after:w-full after:h-full after:bg-no-repeat after:top-0 after:right-0 after:rotate-180 after:bg-[url('/images/bauhaus-pattern.svg')];
 }

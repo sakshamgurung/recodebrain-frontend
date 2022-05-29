@@ -1,19 +1,22 @@
 import Head from "next/head";
 
+import { NotificationContextProvider } from "../store/notification-context";
 import Layout from "../components/layout/Layout";
-import "../styles/globals.css";
 import useGtag from "../lib/useGtag";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
 	useGtag();
 
 	return (
-		<Layout>
-			<Head>
-				<meta name="description" content="Blog post about web development." />
-			</Head>
-			<Component {...pageProps} />
-		</Layout>
+		<NotificationContextProvider>
+			<Layout>
+				<Head>
+					<meta name="description" content="Blog post about web development." />
+				</Head>
+				<Component {...pageProps} />
+			</Layout>
+		</NotificationContextProvider>
 	);
 }
 
