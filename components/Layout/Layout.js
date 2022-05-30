@@ -12,7 +12,7 @@ function Layout(props) {
 	return (
 		<div className="flex flex-col justify-between min-h-screen">
 			<MainNavigation />
-			<main className="mt-16">{props.children}</main>
+			<main className="pt-8">{props.children}</main>
 			{activeNotification ? (
 				<Notification
 					title={activeNotification.title}

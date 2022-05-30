@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import {
 	AiOutlineClose,
@@ -18,10 +19,14 @@ function MobileMenu({ isOpen, onClose }) {
 	const anchorStyle = `flex items-center flex-1 outline-none`;
 
 	return (
-		<nav className="absolute top-0 left-0 flex flex-col flex-1 w-full h-screen text-left bg-slate-100">
-			<div className="h-16 flex items-center bg-primary-600 px-[2%]">
-				<div className="text-3xl font-medium flex-[50%]">RecodeBrain</div>
-				<div className="flex justify-end flex-[50%] pr-4">
+		<div className="absolute top-0 left-0 flex flex-col flex-1 w-full h-screen text-left bg-slate-100">
+			<div className="flex items-center h-16 px-12 py-10 bg-primary-700">
+				<Link href="/">
+					<a className="relative h-20 w-52">
+						<Image src="/icons/logo/logo-full-white-v2.svg" layout="fill" objectFit="contain" />
+					</a>
+				</Link>
+				<div className="flex justify-end flex-[50%]">
 					<AiOutlineClose size="26" color="white" onClick={onClose} />
 				</div>
 			</div>
@@ -63,7 +68,7 @@ function MobileMenu({ isOpen, onClose }) {
 					</Link>
 				</li>
 			</ul>
-		</nav>
+		</div>
 	);
 }
 

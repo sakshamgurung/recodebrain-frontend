@@ -1,9 +1,19 @@
 import Link from "next/link";
+import Image from "next/image";
 
-function DesktopMenu() {
+function DesktopMenu({ isClear }) {
 	return (
-		<nav className="flex items-center">
-			<ul className="flex items-baseline text-base font-semibold list-none space-x-7">
+		<nav className="flex-1 hidden lg:flex lg:flex-row lg:items-center lg:justify-between">
+			<Link href="/">
+				<a className="relative h-20 w-52">
+					{isClear ? (
+						<Image src="/icons/logo/logo-full-blue-v2.svg" layout="fill" objectFit="contain" />
+					) : (
+						<Image src="/icons/logo/logo-full-white-v2.svg" layout="fill" objectFit="contain" />
+					)}
+				</a>
+			</Link>
+			<ul className="flex items-baseline space-x-16 text-base font-medium list-none">
 				<li>
 					<Link href="/">
 						<a>Home</a>

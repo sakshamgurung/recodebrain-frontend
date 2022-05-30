@@ -1,36 +1,38 @@
 import { useEffect, useState } from "react";
 
 import Link from "next/link";
-import { FaHamburger } from "react-icons/fa";
+import Image from "next/image";
 import FocusLock from "react-focus-lock";
+import classNames from "classnames";
+import { FaHamburger } from "react-icons/fa";
 
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
 
 function MainNavigation() {
-	// const [show, setShow] = useState(true);
-	// const [lastScrollY, setLastScrollY] = useState(0);
+	const [clear, setClear] = useState(true);
+	const [lastScrollY, setLastScrollY] = useState(0);
 	const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
 
-	// const controlNavbar = () => {
-	// 	if (typeof window !== "undefined") {
-	// 		if (window.scrollY > lastScrollY) {
-	// 			setShow(false);
-	// 		} else {
-	// 			setShow(true);
-	// 		}
+	const controlNavbar = () => {
+		if (typeof window !== "undefined") {
+			if (window.scrollY > 1) {
+				setClear(false);
+			} else {
+				setClear(true);
+			}
 
-	// 		setLastScrollY(window.scrollY);
-	// 	}
-	// };
+			setLastScrollY(window.scrollY);
+		}
+	};
 
-	// useEffect(() => {
-	// 	window.addEventListener("scroll", controlNavbar);
+	useEffect(() => {
+		window.addEventListener("scroll", controlNavbar);
 
-	// 	return () => {
-	// 		window.removeEventListener("scroll", controlNavbar);
-	// 	};
-	// }, [lastScrollY]);
+		return () => {
+			window.removeEventListener("scroll", controlNavbar);
+		};
+	}, [lastScrollY]);
 
 	const openMobileMenu = () => {
 		setIsOpenMobileMenu(true);
@@ -45,20 +47,30 @@ function MainNavigation() {
 	};
 
 	return (
-		<header className="fixed top-0 z-10 w-full h-16 bg-primary-600 text-slate-100 flex justify-between items-center px-[2%]">
-			{/* <header className={`${classes.header} ${!show && -top-28}`}> */}
-			<Link href="/">
-				<a className="text-3xl font-medium">RecodeBrain</a>
-			</Link>
-			<div className="inline md:hidden">
-				<FocusLock disabled={!isOpenMobileMenu}>
-					<FaHamburger size="26" onClick={openMobileMenu} />
-					<MobileMenu isOpen={isOpenMobileMenu} onClose={closeMobileMenu} />
-				</FocusLock>
-			</div>
-			<div className="hidden md:inline">
-				<DesktopMenu />
-			</div>
+		<header
+			className={classNames(
+				"sticky top-0 z-10 flex items-center justify-between w-full h-16 px-12 py-10 bg-primary-700 transition-color ease-linear duration-200 ",
+				{ "bg-opacity-0 text-primary-800": clear },
+				{ "bg-opacity-100 shadow-sm shadow-primary-700 text-slate-200": !clear }
+			)}
+		>
+			<FocusLock
+				disabled={!isOpenMobileMenu}
+				className="flex flex-row items-center justify-between flex-1 lg:hidden"
+			>
+				<Link href="/">
+					<a className="relative h-20 w-52">
+						{clear ? (
+							<Image src="/icons/logo/logo-full-blue-v2.svg" layout="fill" objectFit="contain" />
+						) : (
+							<Image src="/icons/logo/logo-full-white-v2.svg" layout="fill" objectFit="contain" />
+						)}
+					</a>
+				</Link>
+				<FaHamburger size="26" onClick={openMobileMenu} />
+				<MobileMenu isOpen={isOpenMobileMenu} onClose={closeMobileMenu} />
+			</FocusLock>
+			<DesktopMenu isClear={clear} />
 		</header>
 	);
 }
