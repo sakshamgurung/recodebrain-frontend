@@ -35,3 +35,6 @@ yarn-error.log*
 
 # static folder for DigitalOcean App Platform
 _static
+
+/public/robots.txt
+/public/sitemap*.xml

@@ -26,6 +26,7 @@ function Newsletter() {
 		if (formState.isSubmitSuccessful) {
 			reset();
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [formState]);
 
 	async function subscribeToNewsletter(data) {

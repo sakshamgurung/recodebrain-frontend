@@ -16,7 +16,7 @@ function SerialPage(props) {
 	return (
 		<div className="m-auto mt-8 max-w-[800px]">
 			{serialDetail}
-			<div className="flex flex-col">
+			<div className="flex flex-col mx-4 md:mx-0">
 				{stories.data.map((story) => (
 					<StoryCardV2 key={story.slug} story={story} className="mb-8" />
 				))}

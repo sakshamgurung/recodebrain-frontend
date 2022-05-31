@@ -23,7 +23,12 @@ function MobileMenu({ isOpen, onClose }) {
 			<div className="flex items-center h-16 px-12 py-10 bg-primary-700">
 				<Link href="/">
 					<a className="relative h-20 w-52">
-						<Image src="/icons/logo/logo-full-white-v2.svg" layout="fill" objectFit="contain" />
+						<Image
+							src="/icons/logo/logo-full-white-v2.svg"
+							alt="recodebrain light logo"
+							layout="fill"
+							objectFit="contain"
+						/>
 					</a>
 				</Link>
 				<div className="flex justify-end flex-[50%]">

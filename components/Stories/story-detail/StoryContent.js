@@ -120,6 +120,8 @@ function StoryContent({ content }) {
 		},
 	});
 
+	const [codeCopied, setCodeCopied] = useState(false);
+
 	const components = {
 		p: ({ node, children }) => {
 			if (node.children[0].tagName === "img") {
@@ -178,7 +180,6 @@ function StoryContent({ content }) {
 		},
 		pre: (pre) => {
 			const codeChunk = pre.node.children[0].children[0].value;
-			const [codeCopied, setCodeCopied] = useState(false);
 
 			const handleCopyCode = (codeChunk) => {
 				setCodeCopied(true);

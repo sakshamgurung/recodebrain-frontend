@@ -7,9 +7,19 @@ function DesktopMenu({ isClear }) {
 			<Link href="/">
 				<a className="relative h-20 w-52">
 					{isClear ? (
-						<Image src="/icons/logo/logo-full-blue-v2.svg" layout="fill" objectFit="contain" />
+						<Image
+							src="/icons/logo/logo-full-blue-v2.svg"
+							alt="recodebrain dark logo"
+							layout="fill"
+							objectFit="contain"
+						/>
 					) : (
-						<Image src="/icons/logo/logo-full-white-v2.svg" layout="fill" objectFit="contain" />
+						<Image
+							src="/icons/logo/logo-full-white-v2.svg"
+							alt="recodebrain light logo"
+							layout="fill"
+							objectFit="contain"
+						/>
 					)}
 				</a>
 			</Link>

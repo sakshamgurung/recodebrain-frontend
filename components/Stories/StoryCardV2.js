@@ -33,7 +33,7 @@ function StoryCardV2({ story, className }) {
 					</a>
 				</Link>
 				<p className="text-sm text-gray-600 line-clamp-3">{excerpt}</p>
-				<div className="flex items-center justify-between mt-auto">
+				<div className="flex flex-row items-center justify-between mt-auto">
 					<div className="flex flex-row items-center">
 						<Link href="/about">
 							<a>
