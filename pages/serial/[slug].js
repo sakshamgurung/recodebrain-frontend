@@ -1,3 +1,7 @@
+const { Fragment } = require("react/cjs/react.production.min");
+
+import Head from "next/head";
+
 import StoryCardV2 from "../../components/stories/StoryCardV2";
 import { loadSerialDetail, loadSerialList, loadStoriesUnderSerial } from "../../lib/api-util";
 
@@ -14,14 +18,23 @@ function SerialPage(props) {
 	);
 
 	return (
-		<div className="m-auto mt-8 max-w-[800px]">
-			{serialDetail}
-			<div className="flex flex-col mx-4 md:mx-0">
-				{stories.data.map((story) => (
-					<StoryCardV2 key={story.slug} story={story} className="mb-8" />
-				))}
+		<Fragment>
+			<Head>
+				<meta name="description" content={serial.description} />
+				<link
+					rel="canonical"
+					href={`${process.env.NEXT_PUBLIC_SITE_URL}/serial/${props.serial.slug}`}
+				/>
+			</Head>
+			<div className="m-auto mt-8 max-w-[800px]">
+				{serialDetail}
+				<div className="flex flex-col mx-4 md:mx-0">
+					{stories.data.map((story) => (
+						<StoryCardV2 key={story.slug} story={story} className="mb-8" />
+					))}
+				</div>
 			</div>
-		</div>
+		</Fragment>
 	);
 }
 

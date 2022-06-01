@@ -1,4 +1,6 @@
-import { Fragment } from "react";
+const { Fragment } = require("react/cjs/react.production.min");
+
+import Head from "next/head";
 
 import Story from "../components/stories/story-detail/Story";
 import { loadStoryList, loadStoryDetail, loadRecommendedStories } from "../lib/api-util";
@@ -6,6 +8,10 @@ import { loadStoryList, loadStoryDetail, loadRecommendedStories } from "../lib/a
 function StoryDetailPage(props) {
 	return (
 		<Fragment>
+			<Head>
+				<meta name="description" content={props.story.excerpt} />
+				<link rel="canonical" href={`${process.env.NEXT_PUBLIC_SITE_URL}/${props.story.slug}`} />
+			</Head>
 			<Story story={props.story} recommendedStories={props.recommendedStories} />
 		</Fragment>
 	);

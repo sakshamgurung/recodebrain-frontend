@@ -41,7 +41,7 @@ function StoryCard({ story }) {
 			</div>
 			<div className="flex items-start justify-between m-2">
 				<div className="flex items-center justify-start flex-1">
-					<Link href="#">
+					<Link href="/about">
 						<a>
 							<div className="relative flex items-center justify-center w-14 h-14">
 								{_.isNull(author.profilePicture.data) ? (
@@ -59,8 +59,8 @@ function StoryCard({ story }) {
 					</Link>
 					<div className="flex flex-col pl-4 text-sm">
 						<div>{authorName}</div>
-						<Link href="#">
-							<a>
+						<Link href="/about">
+							<a className="hover:underline">
 								<div>@{author.username}</div>
 							</a>
 						</Link>

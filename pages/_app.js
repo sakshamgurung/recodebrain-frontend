@@ -11,9 +11,6 @@ function MyApp({ Component, pageProps }) {
 	return (
 		<NotificationContextProvider>
 			<Layout>
-				<Head>
-					<meta name="description" content="Blog post about web development." />
-				</Head>
 				<Component {...pageProps} />
 			</Layout>
 		</NotificationContextProvider>

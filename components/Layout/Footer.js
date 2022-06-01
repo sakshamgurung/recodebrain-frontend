@@ -86,10 +86,7 @@ function Footer(props) {
 							{explore.map((e, index) => (
 								<li key={index}>
 									<Link href={e.link}>
-										<a className="flex flex-row items-center">
-											{e.icons}
-											<span className="ml-4">{e.title}</span>
-										</a>
+										<a className="flex flex-row items-center">{e.title}</a>
 									</Link>
 								</li>
 							))}

@@ -1,4 +1,8 @@
+const { Fragment } = require("react/cjs/react.production.min");
+
+import Head from "next/head";
 import { useRouter } from "next/router";
+
 import _ from "lodash";
 import ReactPagination from "react-paginate";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
@@ -40,27 +44,32 @@ function TopicPage(props) {
 	const { pagination } = stories.meta;
 
 	return (
-		<div className="mt-8 m-auto max-w-[1200px]">
-			{topicDetail}
-			<FullGrid className="mt-4">
-				{stories.data.map((story) => (
-					<StoryCard key={story.slug} story={story} />
-				))}
-			</FullGrid>
-			<ReactPagination
-				previousLabel={<MdKeyboardArrowLeft size="24" />}
-				nextLabel={<MdKeyboardArrowRight size="24" />}
-				breakLabel="..."
-				initialPage={pagination.page - 1}
-				pageCount={pagination.pageCount}
-				marginPagesDisplayed={2}
-				onPageChange={paginationHandler}
-				containerClassName="mt-8 mr-4 flex justify-end items-center"
-				pageClassName="mx-2"
-				pageLinkClassName="p-4 flex rounded-sm shadow-md hover:bg-gray-300"
-				activeClassName="rounded-sm bg-blue-500 text-slate-100 pointer-events-none"
-			/>
-		</div>
+		<Fragment>
+			<Head>
+				<meta name="description" content={topic.description} />
+			</Head>
+			<div className="mt-8 m-auto max-w-[1200px]">
+				{topicDetail}
+				<FullGrid className="mt-4">
+					{stories.data.map((story) => (
+						<StoryCard key={story.slug} story={story} />
+					))}
+				</FullGrid>
+				<ReactPagination
+					previousLabel={<MdKeyboardArrowLeft size="24" />}
+					nextLabel={<MdKeyboardArrowRight size="24" />}
+					breakLabel="..."
+					initialPage={pagination.page - 1}
+					pageCount={pagination.pageCount}
+					marginPagesDisplayed={2}
+					onPageChange={paginationHandler}
+					containerClassName="mt-8 mr-4 flex justify-end items-center"
+					pageClassName="mx-2"
+					pageLinkClassName="p-4 flex rounded-sm shadow-md hover:bg-gray-300"
+					activeClassName="rounded-sm bg-blue-500 text-slate-100 pointer-events-none"
+				/>
+			</div>
+		</Fragment>
 	);
 }
 

@@ -51,7 +51,7 @@ function MainNavigation() {
 			className={classNames(
 				"sticky top-0 z-10 flex items-center justify-between w-full h-16 px-12 py-10 bg-primary-700 transition-color ease-linear duration-200 ",
 				{ "bg-opacity-0 text-primary-800": clear },
-				{ "bg-opacity-100 shadow-sm shadow-primary-700 text-slate-200": !clear }
+				{ "bg-opacity-100 shadow-sm shadow-primary-700 text-slate-100": !clear }
 			)}
 		>
 			<FocusLock
