@@ -19,7 +19,7 @@ function AllTopicsPage(props) {
 			</Head>
 			<div className="mt-8 m-auto max-w-[1200px]">
 				<h1 className="mb-8 text-4xl font-semibold text-center">Topics</h1>
-				<ul className="px-12 py-6 text-2xl font-medium text-gray-800 list-disc list-inside bg-white rounded-md shadow-md marker:text-gray-400">
+				<ul className="px-12 py-6 text-2xl font-medium text-gray-800 list-disc list-inside bg-white rounded-md shadow-md dark:text-slate-100 dark:bg-gray-800 marker:text-gray-400">
 					{topics.data.map((topic) => {
 						return (
 							<li key={topic.id}>

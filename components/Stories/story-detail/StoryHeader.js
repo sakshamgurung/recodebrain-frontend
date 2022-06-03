@@ -19,7 +19,7 @@ function StoryHeader({ title, excerpt, image, author, meta }) {
 			<h1 className="py-1 mb-2 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
 				{title}
 			</h1>
-			<p className="text-gray-700">{excerpt}</p>
+			<p className="dark:text-slate-300">{excerpt}</p>
 			<div className="flex flex-row items-center justify-start flex-1 my-6 font-mono text-sm">
 				<Link href="/about">
 					<a>

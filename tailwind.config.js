@@ -1,8 +1,11 @@
 module.exports = {
 	content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+	darkMode: "class",
 	theme: {
 		extend: {
 			colors: {
+				light: "#f3f4f6",
+				dark: "#111827",
 				primary: {
 					0: "#dbf8ff",
 					50: "#c1f0fe",

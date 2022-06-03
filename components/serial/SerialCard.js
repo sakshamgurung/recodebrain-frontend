@@ -15,7 +15,7 @@ function SerialCard({ serial }) {
 		: null;
 
 	return (
-		<article className="grid grid-rows-[auto_minmax(80px,_auto)_70px] gap-0 border-[1px] border-gray-300 rounded-b-lg hover:shadow-md">
+		<article className="grid grid-rows-[auto_minmax(80px,_auto)_70px] gap-0 border-[1px] border-gray-300 dark:bg-gray-800 rounded-b-lg hover:shadow-md dark:hover:shadow-none">
 			<Link href={linkPath}>
 				<a>
 					<div className="relative max-w-full h-[300px]">

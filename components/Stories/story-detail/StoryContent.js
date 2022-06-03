@@ -139,7 +139,7 @@ function StoryContent({ content }) {
 							height={650}
 						/>
 						{hasCaption ? (
-							<div className="font-mono text-base text-center text-gray-600" aria-label={caption}>
+							<div className="font-mono text-base text-center" aria-label={caption}>
 								{caption}
 							</div>
 						) : null}
@@ -208,6 +208,7 @@ function StoryContent({ content }) {
 			const hasMeta = node?.data?.meta;
 
 			const applyHighlights = (applyHighlights) => {
+				console.log("data: ", applyHighlights);
 				if (hasMeta) {
 					const RE = /{([\d,-]+)}/;
 					const metadata = node.data.meta?.replace(/\s/g, "");
@@ -243,7 +244,7 @@ function StoryContent({ content }) {
 	};
 
 	return (
-		<article className="w-full max-w-3xl px-5 py-4 prose prose-lg bg-white">
+		<article className="w-full max-w-3xl px-5 py-4 prose prose-lg dark:prose-invert">
 			<ReactMarkdown
 				css={styleMarkdown}
 				remarkPlugins={[remarkGfm]}

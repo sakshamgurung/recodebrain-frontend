@@ -2,8 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaLinkedin, FaGithub, FaDev } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
+import { useTheme } from "next-themes";
 
 function Footer(props) {
+	const { theme, setTheme } = useTheme();
+
 	const explore = [
 		{
 			icons: <BiLinkExternal size="20" />,
@@ -64,17 +67,26 @@ function Footer(props) {
 	];
 
 	return (
-		<footer className="bg-primary-700 text-slate-100  mt-16 min-h-[12rem]">
+		<footer className="bg-light dark:bg-dark mt-16 min-h-[12rem] border-t-[1px] dark:border-slate-100">
 			<div className="px-12 py-[5%] flex flex-col md:flex-row md:justify-between">
 				<div className="flex flex-col justify-start md:mr-24">
 					<Link href="/">
 						<a className="relative h-20 w-52">
-							<Image
-								src="/icons/logo/logo-full-white-v2.svg"
-								alt="recodebrain light logo"
-								layout="fill"
-								objectFit="contain"
-							/>
+							{theme === "dark" ? (
+								<Image
+									src="/icons/logo/logo-full-white-v2.svg"
+									alt="recodebrain dark logo"
+									layout="fill"
+									objectFit="contain"
+								/>
+							) : (
+								<Image
+									src="/icons/logo/logo-full-blue-v2.svg"
+									alt="recodebrain dark logo"
+									layout="fill"
+									objectFit="contain"
+								/>
+							)}
 						</a>
 					</Link>
 					<span className="text-xs font-light">&copy; 2022, Recodebrain</span>
@@ -98,7 +110,11 @@ function Footer(props) {
 							{connects.map((connect, index) => (
 								<li key={index}>
 									<Link href={connect.link}>
-										<a className="flex flex-row items-center">
+										<a
+											className="flex flex-row items-center"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
 											{connect.icons}
 											<span className="ml-4">{connect.title}</span>
 										</a>
@@ -113,7 +129,11 @@ function Footer(props) {
 							{poweredBy.map((tech, index) => (
 								<li key={index}>
 									<Link href={tech.link}>
-										<a className="flex flex-row items-center">
+										<a
+											className="flex flex-row items-center"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
 											{tech.icons}
 											<span className="ml-4">{tech.title}</span>
 										</a>

@@ -3,9 +3,9 @@ import classNames from "classnames";
 
 function SerialList({ serialDetail, stories, currentPath }) {
 	return (
-		<div className="max-w-3xl w-full border-[1px] border-gray-300 shadow-md rounded-md bg-zinc-100 mb-4">
+		<div className="max-w-3xl w-full border-[1px] border-gray-300 shadow-md rounded-md bg-slate-100 dark:bg-gray-800 mb-4">
 			<ul>
-				<li key={serialDetail.slug} className=" border-b-[1px] text-primary-600">
+				<li key={serialDetail.slug} className=" border-b-[1px]">
 					<Link href={`/serial/${serialDetail.slug}`}>
 						<a className="flex p-3 pl-5 text-2xl font-semibold">{serialDetail.title}</a>
 					</Link>
@@ -18,7 +18,7 @@ function SerialList({ serialDetail, stories, currentPath }) {
 							<Link href={`/${story.slug}`}>
 								<a
 									className={classNames(
-										"p-3 flex flex-row items-center text-xl space-x-5 hover:bg-white",
+										"p-3 flex flex-row items-center text-xl space-x-5 hover:bg-white dark:hover:bg-gray-900",
 										{
 											"font-semibold": isActive,
 										}
@@ -27,7 +27,7 @@ function SerialList({ serialDetail, stories, currentPath }) {
 									<div
 										className={classNames(
 											"flex font-normal items-center justify-center w-10 h-10  rounded-full ",
-											{ "bg-gray-300": !isActive },
+											{ "bg-gray-300 dark:bg-gray-700": !isActive },
 											{ "bg-primary-600 text-slate-100 ": isActive }
 										)}
 									>

@@ -33,7 +33,7 @@ function HomePage(props) {
 				))}
 			</div>
 			<section className="w-full max-w-3xl m-auto mt-24">
-				<div className="relative p-5 mx-2 bg-transparent rounded-md shadow-md md:mx-0 shadow-primary-800 text-slate-100 newsletter-bg-before-pattern newsletter-bg-after-pattern">
+				<div className="relative p-5 mx-2 bg-transparent rounded-md shadow-md md:mx-0 shadow-primary-800 dark:shadow-none text-slate-100 newsletter-bg-before-pattern newsletter-bg-after-pattern">
 					<div className="absolute bg-[url('/icons/paper-plane.svg')] bg-no-repeat bg-contain w-20 h-20 right-24 -top-10"></div>
 					<div className="absolute top-0 left-0 w-full h-full rounded-md bg-primary-600 -z-20"></div>
 					<div className="absolute top-0 left-0 w-full h-full rounded-md opacity-80 -z-20 bg-primary-800"></div>

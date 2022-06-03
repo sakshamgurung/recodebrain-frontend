@@ -17,7 +17,7 @@ function StoryCardV2({ story, className }) {
 	return (
 		<article
 			key={slug}
-			className={`h-[200px] flex flex-row border-[1px] border-gray-300 bg-slate-100 overflow-hidden duration-300 ease-in rounded-md hover:shadow-md hover:scale-105 ${className}`}
+			className={`h-[200px] flex flex-row border-[1px] border-gray-300 bg-slate-100 overflow-hidden duration-300 ease-in rounded-md hover:shadow-md hover:scale-105 dark:hover:shadow-none dark:bg-gray-800 ${className}`}
 		>
 			<Link href={linkPath}>
 				<a>
@@ -32,7 +32,7 @@ function StoryCardV2({ story, className }) {
 						<h1 className="text-xl font-semibold truncate h-9 hover:underline">{title}</h1>
 					</a>
 				</Link>
-				<p className="text-sm text-gray-600 line-clamp-3">{excerpt}</p>
+				<p className="text-sm line-clamp-3">{excerpt}</p>
 				<div className="flex flex-row items-center justify-between mt-auto">
 					<div className="flex flex-row items-center">
 						<Link href="/about">

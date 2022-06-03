@@ -13,7 +13,7 @@ function AboutPage() {
 			</Head>
 			<div className="max-w-[1200px] m-auto mt-8">
 				<h1 className="mb-8 text-4xl font-semibold text-center">About recodebrain</h1>
-				<div className="px-12 py-6 space-y-4 text-lg text-gray-800 bg-white rounded-md shadow-md font-base">
+				<div className="px-12 py-6 space-y-4 text-lg bg-white rounded-md shadow-md dark:bg-gray-800 font-base">
 					<div className="m-auto flex flex-row border-[1px] rounded-md shadow-md w-[310px] h-[438.5] overflow-clip">
 						<Image src="/images/profile.png" width="310" height="438.5" />
 					</div>
@@ -24,7 +24,7 @@ function AboutPage() {
 					</p>
 					<p>
 						I created <span className="font-bold">recodebrain</span>:
-						<ul className="list-disc list-inside marker:text-gray-400">
+						<ul className="list-disc list-inside">
 							<li>to add value through knowledge sharing</li>
 							<li>to keep learning and add value to myself</li>
 						</ul>

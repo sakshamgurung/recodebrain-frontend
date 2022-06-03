@@ -11,24 +11,35 @@
 	margin: 0;
 }
 
-body {
-	--background-color: #e5e7eb;
-	--typo-color-1: rgb(45, 45, 45);
-	--typo-color-2: rgb(242, 242, 242);
+:root {
+	--bg-light: #f3f4f6;
+	--bg-dark: #111827;
+	--typo-color-1: rgb(55, 65, 81);
+	--typo-color-2: #f1f5f9;
 
 	--gicon-white-clone: url("/icons/content_copy_white.svg");
 	--gicon-white-check: url("/icons/check_box_white.svg");
 	--icon-info: url("/icons/note-dark.svg");
 
-	--code-color: #4338ca;
+	--code-color-light: #4338ca;
+	--code-color-dark: #38ca69;
 	--code-highlight: #374151;
 	--code-font: "JetBrains Mono", Monaco, "Courier New", monospace;
+}
 
+html[class="dark"] {
+	--code-color: var(--code-color-dark);
+}
+
+html[class="light"] {
+	--code-color: var(--code-color-light);
+}
+
+body {
 	font-family: "Poppins", Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
 	color: var(--typo-color-1);
-	background-color: var(--background-color);
 }
 
 .copyCodeButton {

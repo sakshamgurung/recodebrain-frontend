@@ -75,6 +75,7 @@ function Newsletter() {
 	return (
 		<form className="flex flex-col gap-2" onSubmit={handleSubmit(subscribeToNewsletter)}>
 			<input
+				aria-label="your first name"
 				className="newsletter-input"
 				name="firstName"
 				type="text"
@@ -85,6 +86,7 @@ function Newsletter() {
 				<span className="text-sm italic text-yellow-400">{errors.email.message}</span>
 			) : null}
 			<input
+				aria-label="your email"
 				className="newsletter-input"
 				name="email"
 				type="email"
@@ -98,6 +100,7 @@ function Newsletter() {
 				{formState.isSubmitting ? (
 					<span>
 						<svg
+							aria-label="loading"
 							role="status"
 							class="inline w-8 h-8 mr-2 animate-spin fill-gray-600 dark:fill-gray-300"
 							viewBox="0 0 100 101"
