@@ -208,7 +208,6 @@ function StoryContent({ content }) {
 			const hasMeta = node?.data?.meta;
 
 			const applyHighlights = (applyHighlights) => {
-				console.log("data: ", applyHighlights);
 				if (hasMeta) {
 					const RE = /{([\d,-]+)}/;
 					const metadata = node.data.meta?.replace(/\s/g, "");
@@ -248,7 +247,7 @@ function StoryContent({ content }) {
 			<ReactMarkdown
 				css={styleMarkdown}
 				remarkPlugins={[remarkGfm]}
-				rehypePlugins={[rehypeRaw]}
+				rehypePlugins={[[rehypeRaw, { passThrough: ["element"] }]]}
 				components={components}
 			>
 				{content}
