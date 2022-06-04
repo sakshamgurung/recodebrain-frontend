@@ -102,7 +102,7 @@ function Newsletter() {
 						<svg
 							aria-label="loading"
 							role="status"
-							class="inline w-8 h-8 mr-2 animate-spin fill-gray-600 dark:fill-gray-300"
+							className="inline w-8 h-8 mr-2 animate-spin fill-slate-100"
 							viewBox="0 0 100 101"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"

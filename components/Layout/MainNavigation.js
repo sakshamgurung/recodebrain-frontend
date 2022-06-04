@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
 import FocusLock from "react-focus-lock";
@@ -10,7 +11,8 @@ import { useTheme } from "next-themes";
 
 import { useLoaded } from "../../store/customHook";
 import DesktopMenu from "./DesktopMenu";
-import MobileMenu from "./MobileMenu";
+// import MobileMenu from "./MobileMenu";
+const MobileMenu = dynamic(() => import("./MobileMenu"));
 
 function MainNavigation() {
 	const loaded = useLoaded();

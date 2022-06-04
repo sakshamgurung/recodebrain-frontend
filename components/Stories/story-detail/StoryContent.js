@@ -243,7 +243,7 @@ function StoryContent({ content }) {
 	};
 
 	return (
-		<article className="w-full max-w-3xl px-5 py-4 prose prose-lg dark:prose-invert">
+		<article className="w-full max-w-3xl px-5 py-4 prose prose-lg prose-li:marker:marker:text-gray-500 dark:prose-invert">
 			<ReactMarkdown
 				css={styleMarkdown}
 				remarkPlugins={[remarkGfm]}

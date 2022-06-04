@@ -47,7 +47,7 @@ body {
 }
 
 .newsletter-input {
-	@apply p-2 text-gray-800 rounded-sm outline-none;
+	@apply p-2 text-gray-800 rounded-sm outline-none dark:text-slate-100;
 }
 
 .newsletter-bg-before-pattern {

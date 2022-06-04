@@ -27,7 +27,7 @@ export async function getStaticProps(context) {
 			story,
 			recommendedStories,
 		},
-		revalidate: 600,
+		revalidate: 3600,
 	};
 }
 

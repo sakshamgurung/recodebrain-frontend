@@ -3,13 +3,13 @@ const { Fragment } = require("react/cjs/react.production.min");
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import _ from "lodash";
+import isEmpty from "lodash/isEmpty";
 import ReactPagination from "react-paginate";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 import FullGrid from "../../components/ui/FullGrid";
 import StoryCard from "../../components/stories/StoryCard";
-import { loadStoriesUnderTopic, loadTopics, loadTopicDetail } from "../../lib/api-util";
+import { loadStoriesUnderTopic, loadTopicDetail } from "../../lib/api-util";
 
 function TopicPage(props) {
 	const router = useRouter();
@@ -31,12 +31,19 @@ function TopicPage(props) {
 
 	if (props.notFound) {
 		return (
-			<div className="m-auto mt-8 rounded-md shadow-md max-w-[1200px] bg-white px-12 py-6">
-				{topicDetail}
-				<h1 className="mt-6 text-2xl font-light text-center">
-					Sorry :( no stories related to this topic.
-				</h1>
-			</div>
+			<Fragment>
+				<Head>
+					<title>#{topic.name} stories | RecodeBrain</title>
+					<meta name="description" content={topic.description} />
+					<link rel="canonical" href={`${process.env.NEXT_PUBLIC_SITE_URL}/404`} />
+				</Head>
+				<div className="m-auto mt-8  max-w-[1200px]">
+					{topicDetail}
+					<h1 className="px-12 py-6 mt-6 text-2xl font-light text-center bg-white rounded-md shadow-md dark:shadow-none dark:bg-gray-800">
+						Sorry 😔 no stories related to this topic.
+					</h1>
+				</div>
+			</Fragment>
 		);
 	}
 
@@ -46,6 +53,7 @@ function TopicPage(props) {
 	return (
 		<Fragment>
 			<Head>
+				<title>#{topic.name} stories | RecodeBrain</title>
 				<meta name="description" content={topic.description} />
 			</Head>
 			<div className="mt-8 m-auto max-w-[1200px]">
@@ -81,7 +89,7 @@ export async function getServerSideProps(context) {
 	const stories = await loadStoriesUnderTopic(slug, page);
 	const topic = await loadTopicDetail(slug);
 
-	if (_.isEmpty(stories.data)) {
+	if (isEmpty(stories.data)) {
 		return { props: { notFound: true, topic } };
 	}
 

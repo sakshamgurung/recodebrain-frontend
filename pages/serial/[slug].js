@@ -20,6 +20,7 @@ function SerialPage(props) {
 	return (
 		<Fragment>
 			<Head>
+				<title>{serial.title} | RecodeBrain</title>
 				<meta name="description" content={serial.description} />
 				<link
 					rel="canonical"
@@ -45,6 +46,7 @@ export async function getStaticProps(context) {
 
 	return {
 		props: { stories, serial },
+		revalidate: 3600,
 	};
 }
 

@@ -1,15 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import _ from "lodash";
+import isNull from "lodash/isNull";
 import { AiOutlineSmile } from "react-icons/ai";
-import moment from "moment";
+import dayjs from "dayjs";
+import advanceFormat from "dayjs/plugin/advancedFormat";
 import RelatedTopics from "./RelatedTopics";
 
 function StoryHeader({ title, excerpt, image, author, meta }) {
+	dayjs.extend(advanceFormat);
 	const { publishedAt, readTime, topics } = meta;
 	const authorName = `${author.firstName} ${author.lastName}`;
-	const publishedDate = moment(publishedAt).format("MMM Do YYYY");
-	let profilePicturePath = !_.isNull(author.profilePicture.data)
+	const publishedDate = dayjs(publishedAt).format("MMM Do YYYY");
+	let profilePicturePath = !isNull(author.profilePicture.data)
 		? `${process.env.NEXT_PUBLIC_STRAPI_DOMAIN}${author.profilePicture.data.attributes.url}`
 		: null;
 
@@ -24,7 +26,7 @@ function StoryHeader({ title, excerpt, image, author, meta }) {
 				<Link href="/about">
 					<a>
 						<div className="relative w-12 h-12 overflow-hidden rounded-md">
-							{_.isNull(author.profilePicture.data) ? (
+							{isNull(author.profilePicture.data) ? (
 								<AiOutlineSmile size="40" />
 							) : (
 								<Image

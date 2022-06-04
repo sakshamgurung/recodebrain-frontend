@@ -1,16 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import _ from "lodash";
+import isNull from "lodash/isNull";
 import { AiOutlineSmile } from "react-icons/ai";
-import moment from "moment";
-
+import dayjs from "dayjs";
+import advanceFormat from "dayjs/plugin/advancedFormat";
 function StoryCardV2({ story, className }) {
+	dayjs.extend(advanceFormat);
 	const { author, coverImage, excerpt, publishedAt, readTime, slug, title } = story;
 	const linkPath = `/${slug}`;
 	const authorName = `${author.firstName} ${author.lastName}`;
 	const coverImagePath = `${process.env.NEXT_PUBLIC_STRAPI_DOMAIN}${coverImage.url}`;
-	const publishedDate = moment(publishedAt).format("MMM Do YYYY");
-	let profilePicturePath = !_.isNull(author.profilePicture?.data)
+	const publishedDate = dayjs(publishedAt).format("MMM Do YYYY");
+	let profilePicturePath = !isNull(author.profilePicture?.data)
 		? `${process.env.NEXT_PUBLIC_STRAPI_DOMAIN}${author.profilePicture.data.attributes.url}`
 		: null;
 
@@ -38,7 +39,7 @@ function StoryCardV2({ story, className }) {
 						<Link href="/about">
 							<a>
 								<div className="relative overflow-hidden rounded-md w-14 h-14">
-									{_.isNull(author.profilePicture.data) ? (
+									{isNull(author.profilePicture.data) ? (
 										<AiOutlineSmile size="40" />
 									) : (
 										<Image

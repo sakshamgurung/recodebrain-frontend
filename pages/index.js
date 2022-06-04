@@ -15,6 +15,7 @@ function HomePage(props) {
 	return (
 		<Fragment>
 			<Head>
+				<title>RecodeBrain | Share Knowledge to add value</title>
 				<meta
 					name="description"
 					content="Blog post about software development, web technology, and programming."

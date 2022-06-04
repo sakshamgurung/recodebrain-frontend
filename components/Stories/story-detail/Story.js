@@ -1,4 +1,4 @@
-import _ from "lodash";
+import isEmpty from "lodash/isEmpty";
 
 import StoryContent from "./StoryContent";
 import StoryHeader from "./StoryHeader";
@@ -31,7 +31,7 @@ function Story({ story, recommendedStories }) {
 				/>
 			) : null}
 			<StoryContent content={story.content} />
-			{!_.isEmpty(recommendedStories) ? <RelatedStories stories={recommendedStories} /> : null}
+			{!isEmpty(recommendedStories) ? <RelatedStories stories={recommendedStories} /> : null}
 			<section className="w-full max-w-3xl mt-14">
 				<div className="relative p-5 mx-2 bg-transparent rounded-md shadow-md md:mx-0 shadow-primary-800 dark:shadow-none text-slate-100 newsletter-bg-before-pattern newsletter-bg-after-pattern">
 					<div className="absolute bg-[url('/icons/paper-plane.svg')] bg-no-repeat bg-contain w-20 h-20 right-24 -top-10"></div>

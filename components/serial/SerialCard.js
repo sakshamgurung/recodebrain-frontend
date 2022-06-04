@@ -1,16 +1,18 @@
-import _ from "lodash";
-import moment from "moment";
+import isNull from "lodash/isNull";
+import dayjs from "dayjs";
+import advanceFormat from "dayjs/plugin/advancedFormat";
 import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineSmile } from "react-icons/ai";
 
 function SerialCard({ serial }) {
+	dayjs.extend(advanceFormat);
 	const { slug, title, publishedAt, coverImage, author } = serial;
 	const coverImagePath = `${process.env.NEXT_PUBLIC_STRAPI_DOMAIN}${coverImage.url}`;
 	const linkPath = `/serial/${slug}`;
 	const authorName = `${author.firstName} ${author.lastName}`;
-	const publishedDate = moment(publishedAt).format("MMM Do YYYY");
-	let profilePicturePath = !_.isNull(author.profilePicture?.data)
+	const publishedDate = dayjs(publishedAt).format("MMM Do YYYY");
+	let profilePicturePath = !isNull(author.profilePicture?.data)
 		? `${process.env.NEXT_PUBLIC_STRAPI_DOMAIN}${author.profilePicture.data.attributes.url}`
 		: null;
 
@@ -40,7 +42,7 @@ function SerialCard({ serial }) {
 					<Link href="/about">
 						<a>
 							<div className="relative flex items-center justify-center w-14 h-14">
-								{_.isNull(author.profilePicture.data) ? (
+								{isNull(author.profilePicture.data) ? (
 									<AiOutlineSmile size="40" />
 								) : (
 									<Image
