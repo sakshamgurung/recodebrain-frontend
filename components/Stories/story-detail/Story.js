@@ -8,7 +8,7 @@ import Newsletter from "../../ui/NewsLetter";
 import { GoogleAdsenseVertical, GoogleAdsenseInArticle } from "../../ui/GoogleAdsenseContainer";
 
 function Story({ story, recommendedStories }) {
-	const imagePath = `${process.env.NEXT_PUBLIC_STRAPI_DOMAIN}${story.coverImage.url}`;
+	const imagePath = `${story.coverImage.url}`;
 
 	return (
 		<div className="flex flex-col max-w-[1600px] m-auto md:grid md:gap-2 md:grid-cols-[minmax(120px,_300px)_minmax(512px,_auto)_minmax(120px,_300px)] md:grid-rows-[900px_auto_auto]">

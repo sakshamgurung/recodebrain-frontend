@@ -10,11 +10,13 @@ import rehypeRaw from "rehype-raw";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import rangeParser from "parse-numeric-range";
 import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
+import java from "react-syntax-highlighter/dist/cjs/languages/prism/java";
 import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
 import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
 
 import generateSlug from "../../../lib/generateSlug";
 
+SyntaxHighlighter.registerLanguage("java", java);
 SyntaxHighlighter.registerLanguage("js", js);
 SyntaxHighlighter.registerLanguage("css", css);
 
@@ -22,7 +24,7 @@ function StoryContent({ content }) {
 	const styleMarkdown = emotionCSS({
 		h3: {
 			position: "relative",
-			margin: "0 0 1.5rem",
+			margin: "0.75rem 0 0.75rem",
 			scrollMarginTop: "4rem",
 			a: {
 				textDecoration: "none",
@@ -86,7 +88,7 @@ function StoryContent({ content }) {
 		},
 		pre: {
 			padding: 0,
-			margin: "0rem -2rem",
+			margin: "1rem -2rem",
 			boxShadow: "0 10px 8px rgb(0, 0, 0,  0.04) , 0 4px 3px rgb(0, 0, 0 , 0.1)",
 		},
 		".codeStyle": {
@@ -129,17 +131,21 @@ function StoryContent({ content }) {
 				const metastring = image.properties?.alt;
 				const hasCaption = metastring?.toLowerCase().includes("{caption:");
 				const caption = metastring?.match(/{caption: (.*?)}/)?.pop();
-
 				return (
 					<div className="w-full mt-8 mb-8">
-						<Image
-							src={image.properties.src}
-							alt={image.properties.alt}
-							width={1200}
-							height={650}
-						/>
+						<div className="relative w-[768px] h-[432px]">
+							<Image
+								src={image.properties.src}
+								alt={image.properties.alt}
+								layout="fill"
+								objectFit="contain"
+							/>
+						</div>
 						{hasCaption ? (
-							<div className="font-mono text-base text-center" aria-label={caption}>
+							<div
+								className="mt-4 font-mono text-base italic font-medium text-center"
+								aria-label={caption}
+							>
 								{caption}
 							</div>
 						) : null}

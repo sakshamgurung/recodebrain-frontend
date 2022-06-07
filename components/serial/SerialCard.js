@@ -8,12 +8,12 @@ import { AiOutlineSmile } from "react-icons/ai";
 function SerialCard({ serial }) {
 	dayjs.extend(advanceFormat);
 	const { slug, title, publishedAt, coverImage, author } = serial;
-	const coverImagePath = `${process.env.NEXT_PUBLIC_STRAPI_DOMAIN}${coverImage.url}`;
+	const coverImagePath = `${coverImage.url}`;
 	const linkPath = `/serial/${slug}`;
 	const authorName = `${author.firstName} ${author.lastName}`;
 	const publishedDate = dayjs(publishedAt).format("MMM Do YYYY");
 	let profilePicturePath = !isNull(author.profilePicture?.data)
-		? `${process.env.NEXT_PUBLIC_STRAPI_DOMAIN}${author.profilePicture.data.attributes.url}`
+		? `${author.profilePicture.data.attributes.url}`
 		: null;
 
 	return (

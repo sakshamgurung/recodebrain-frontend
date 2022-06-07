@@ -12,7 +12,7 @@ function StoryHeader({ title, excerpt, image, author, meta }) {
 	const authorName = `${author.firstName} ${author.lastName}`;
 	const publishedDate = dayjs(publishedAt).format("MMM Do YYYY");
 	let profilePicturePath = !isNull(author.profilePicture.data)
-		? `${process.env.NEXT_PUBLIC_STRAPI_DOMAIN}${author.profilePicture.data.attributes.url}`
+		? `${author.profilePicture.data.attributes.url}`
 		: null;
 
 	return (
@@ -52,7 +52,15 @@ function StoryHeader({ title, excerpt, image, author, meta }) {
 					<time>{readTime} min read</time>
 				</div>
 			</div>
-			<Image className="rounded-md md:h-80" src={image} alt={title} width={1200} height={650} />
+			<div className="relative w-[896px] h-[650px]">
+				<Image
+					className="rounded-md md:h-80"
+					src={image}
+					alt={title}
+					layout="fill"
+					objectFit="cover"
+				/>
+			</div>
 		</header>
 	);
 }

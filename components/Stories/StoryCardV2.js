@@ -10,10 +10,10 @@ function StoryCardV2({ story, className }) {
 	const { author, coverImage, excerpt, publishedAt, readTime, slug, title } = story;
 	const linkPath = `/${slug}`;
 	const authorName = `${author.firstName} ${author.lastName}`;
-	const coverImagePath = `${process.env.NEXT_PUBLIC_STRAPI_DOMAIN}${coverImage.url}`;
+	const coverImagePath = `${coverImage.url}`;
 	const publishedDate = dayjs(publishedAt).format("MMM Do YYYY");
 	let profilePicturePath = !isNull(author.profilePicture?.data)
-		? `${process.env.NEXT_PUBLIC_STRAPI_DOMAIN}${author.profilePicture.data.attributes.url}`
+		? `${author.profilePicture.data.attributes.url}`
 		: null;
 
 	return (
