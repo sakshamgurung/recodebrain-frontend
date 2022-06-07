@@ -4,8 +4,8 @@ import Head from "next/head";
 
 import isEmpty from "lodash/isEmpty";
 
-import FullGrid from "../../components/ui/FullGrid";
-import SerialCard from "../../components/serial/SerialCard";
+import FullGrid from "components/ui/FullGrid";
+import SerialCard from "components/serial/SerialCard";
 import { loadSerials } from "../../lib/api-util";
 
 function AllSerialPage(props) {

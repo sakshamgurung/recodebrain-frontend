@@ -2,7 +2,7 @@ const { Fragment } = require("react/cjs/react.production.min");
 
 import Head from "next/head";
 
-import StoryCardV2 from "../../components/stories/StoryCardV2";
+import StoryCardV2 from "components/stories/StoryCardV2";
 import { loadSerialDetail, loadSerialList, loadStoriesUnderSerial } from "../../lib/api-util";
 
 function SerialPage(props) {

@@ -2,7 +2,7 @@ const { Fragment } = require("react/cjs/react.production.min");
 
 import Head from "next/head";
 
-import Story from "../components/stories/story-detail/Story";
+import Story from "components/stories/story-detail/Story";
 import { loadStoryList, loadStoryDetail, loadRecommendedStories } from "../lib/api-util";
 
 function StoryDetailPage(props) {

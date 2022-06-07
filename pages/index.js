@@ -2,10 +2,10 @@ import { Fragment } from "react/cjs/react.production.min";
 
 import Head from "next/head";
 
-import StoryFeatured from "../components/stories/StoryFeatured";
-import StoryGrid from "../components/stories/StoryGrid";
-import Divider from "../components/ui/DividerLink";
-import Newsletter from "../components/ui/NewsLetter";
+import StoryFeatured from "components/stories/StoryFeatured";
+import StoryGrid from "components/stories/StoryGrid";
+import Divider from "components/ui/DividerLink";
+import Newsletter from "components/ui/NewsLetter";
 
 import { loadHomePage } from "../lib/api-util";
 

@@ -2,7 +2,7 @@ import Script from "next/script";
 import { ThemeProvider } from "next-themes";
 
 import { NotificationContextProvider } from "../store/notification-context";
-import Layout from "../components/layout/Layout";
+import Layout from "components/layout/Layout";
 import useGtag from "../lib/useGtag";
 import "../styles/globals.css";
 

@@ -7,8 +7,8 @@ import isEmpty from "lodash/isEmpty";
 import ReactPagination from "react-paginate";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
-import FullGrid from "../../components/ui/FullGrid";
-import StoryCard from "../../components/stories/StoryCard";
+import FullGrid from "components/ui/FullGrid";
+import StoryCard from "components/stories/StoryCard";
 import { loadStoriesUnderTopic, loadTopicDetail } from "../../lib/api-util";
 
 function TopicPage(props) {
