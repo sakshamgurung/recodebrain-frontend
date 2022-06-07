@@ -4,6 +4,7 @@ import isNull from "lodash/isNull";
 import { AiOutlineSmile } from "react-icons/ai";
 import dayjs from "dayjs";
 import advanceFormat from "dayjs/plugin/advancedFormat";
+
 function StoryCardV2({ story, className }) {
 	dayjs.extend(advanceFormat);
 	const { author, coverImage, excerpt, publishedAt, readTime, slug, title } = story;
@@ -18,11 +19,11 @@ function StoryCardV2({ story, className }) {
 	return (
 		<article
 			key={slug}
-			className={`h-[200px] flex flex-row border-[1px] border-gray-300 bg-slate-100 overflow-hidden duration-300 ease-in rounded-md hover:shadow-md hover:scale-105 dark:hover:shadow-none dark:bg-gray-800 ${className}`}
+			className={`h-fit flex flex-col md:flex-row border-[1px] border-gray-300 bg-slate-100 overflow-hidden rounded-md hover:shadow-md dark:hover:shadow-none dark:bg-gray-800 ${className}`}
 		>
 			<Link href={linkPath}>
 				<a>
-					<div className="relative w-[200px] h-[200px]">
+					<div className="relative w-full h-[200px] md:w-[200px] md:h-[200px]">
 						<Image src={coverImagePath} alt={slug} layout="fill" objectFit="cover" />
 					</div>
 				</a>
@@ -34,7 +35,7 @@ function StoryCardV2({ story, className }) {
 					</a>
 				</Link>
 				<p className="text-sm line-clamp-3">{excerpt}</p>
-				<div className="flex flex-row items-center justify-between mt-auto">
+				<div className="flex flex-row items-center justify-between mt-4 md:mt-auto">
 					<div className="flex flex-row items-center">
 						<Link href="/about">
 							<a>

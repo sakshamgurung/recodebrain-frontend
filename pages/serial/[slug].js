@@ -29,9 +29,13 @@ function SerialPage(props) {
 			</Head>
 			<div className="m-auto mt-8 max-w-[800px]">
 				{serialDetail}
-				<div className="flex flex-col mx-4 md:mx-0">
+				<div className="flex flex-col mx-4 lg:mx-0">
 					{stories.data.map((story) => (
-						<StoryCardV2 key={story.slug} story={story} className="mb-8" />
+						<StoryCardV2
+							key={story.slug}
+							story={story}
+							className="mb-8 lg:hover:scale-105 lg:duration-300 lg:ease-in"
+						/>
 					))}
 				</div>
 			</div>
