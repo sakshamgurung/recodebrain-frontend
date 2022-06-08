@@ -1,13 +1,17 @@
 import Script from "next/script";
 import { ThemeProvider } from "next-themes";
+import { useRouter } from "next/router";
 
 import { NotificationContextProvider } from "../store/notification-context";
 import Layout from "components/layout/Layout";
+import ErrorBoundary from "components/ui/ErrorBoundary";
 import useGtag from "../lib/useGtag";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
 	useGtag();
+	const router = useRouter();
+
 	return (
 		<ThemeProvider attribute="class">
 			<NotificationContextProvider>
@@ -22,7 +26,9 @@ function MyApp({ Component, pageProps }) {
 							console.error("Script failed to load", e);
 						}}
 					/>
-					<Component {...pageProps} />
+					<ErrorBoundary router={router}>
+						<Component {...pageProps} />
+					</ErrorBoundary>
 				</Layout>
 			</NotificationContextProvider>
 		</ThemeProvider>
