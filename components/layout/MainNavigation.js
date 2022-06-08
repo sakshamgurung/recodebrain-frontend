@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Fragment } from "react/cjs/react.production.min";
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -74,21 +75,45 @@ function MainNavigation() {
 
 			if (currentTheme === "dark") {
 				return (
-					<Image
-						src="/icons/logo/logo-full-white-v2.svg"
-						alt="recodebrain white logo"
-						layout="fill"
-						objectFit="contain"
-					/>
+					<Fragment>
+						<div className="relative block w-16 h-12 lg:hidden">
+							<Image
+								src="/icons/logo/logo-white.svg"
+								alt="recodebrain white logo"
+								layout="fill"
+								objectFit="contain"
+							/>
+						</div>
+						<div className="relative hidden lg:h-20 lg:w-52 lg:block">
+							<Image
+								src="/icons/logo/logo-full-white-v2.svg"
+								alt="recodebrain white logo"
+								layout="fill"
+								objectFit="contain"
+							/>
+						</div>
+					</Fragment>
 				);
 			} else {
 				return (
-					<Image
-						src="/icons/logo/logo-full-blue-v2.svg"
-						alt="recodebrain dark logo"
-						layout="fill"
-						objectFit="contain"
-					/>
+					<Fragment>
+						<div className="relative block w-16 h-12 lg:hidden">
+							<Image
+								src="/icons/logo/logo-blue.svg"
+								alt="recodebrain dark logo"
+								layout="fill"
+								objectFit="contain"
+							/>
+						</div>
+						<div className="relative hidden lg:h-20 lg:w-52 lg:block">
+							<Image
+								src="/icons/logo/logo-full-blue-v2.svg"
+								alt="recodebrain dark logo"
+								layout="fill"
+								objectFit="contain"
+							/>
+						</div>
+					</Fragment>
 				);
 			}
 		}
@@ -97,24 +122,27 @@ function MainNavigation() {
 	return (
 		<header
 			className={classNames(
-				"sticky top-0 z-10 flex items-center justify-between w-full h-16 px-12 py-10 bg-light dark:bg-dark transition-color ease-linear duration-200 ",
+				"sticky top-0 z-10 flex items-center justify-between w-full h-16 pr-12 pl-1 lg:pl-12 py-10 bg-light dark:bg-dark transition-color ease-linear duration-200 ",
 				{ "shadow-lg dark:shadow-none": !clear }
 			)}
 		>
+			<Link href="/">
+				<a>{siteLogo()}</a>
+			</Link>
 			<FocusLock
 				disabled={!isOpenMobileMenu}
-				className="flex flex-row items-center justify-between flex-1 lg:hidden"
+				className="flex flex-row items-center justify-end flex-1 md:hidden"
 			>
-				<Link href="/">
-					<a className="relative h-20 w-52">{siteLogo()}</a>
-				</Link>
 				<button aria-label="Toggle menu" aria-controls="mobile-menu" onClick={openMobileMenu}>
 					<FaHamburger size="26" />
 				</button>
 				<MobileMenu id="mobile-menu" isOpen={isOpenMobileMenu} onClose={closeMobileMenu} />
 			</FocusLock>
 			<DesktopMenu />
-			<button onClick={toggleTheme} className="border-l-[1px] border-gray-700 pl-8 ml-12">
+			<button
+				onClick={toggleTheme}
+				className="border-l-[1px] border-gray-700 pl-6 ml-6 md:pl-8 md:ml-8"
+			>
 				{toggleThemeIcon()}
 			</button>
 		</header>

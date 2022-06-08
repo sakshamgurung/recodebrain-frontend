@@ -1,3 +1,5 @@
+import { Fragment } from "react/cjs/react.production.min";
+
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
@@ -30,21 +32,45 @@ function MobileMenu({ isOpen, onClose, ...props }) {
 
 			if (currentTheme === "dark") {
 				return (
-					<Image
-						src="/icons/logo/logo-full-white-v2.svg"
-						alt="recodebrain white logo"
-						layout="fill"
-						objectFit="contain"
-					/>
+					<Fragment>
+						<div className="relative block w-16 h-12 lg:hidden">
+							<Image
+								src="/icons/logo/logo-white.svg"
+								alt="recodebrain white logo"
+								layout="fill"
+								objectFit="contain"
+							/>
+						</div>
+						<div className="relative hidden lg:h-20 lg:w-52 lg:block">
+							<Image
+								src="/icons/logo/logo-full-white-v2.svg"
+								alt="recodebrain white logo"
+								layout="fill"
+								objectFit="contain"
+							/>
+						</div>
+					</Fragment>
 				);
 			} else {
 				return (
-					<Image
-						src="/icons/logo/logo-full-blue-v2.svg"
-						alt="recodebrain dark logo"
-						layout="fill"
-						objectFit="contain"
-					/>
+					<Fragment>
+						<div className="relative block w-16 h-12 lg:hidden">
+							<Image
+								src="/icons/logo/logo-blue.svg"
+								alt="recodebrain dark logo"
+								layout="fill"
+								objectFit="contain"
+							/>
+						</div>
+						<div className="relative hidden lg:h-20 lg:w-52 lg:block">
+							<Image
+								src="/icons/logo/logo-full-blue-v2.svg"
+								alt="recodebrain dark logo"
+								layout="fill"
+								objectFit="contain"
+							/>
+						</div>
+					</Fragment>
 				);
 			}
 		}
@@ -53,12 +79,12 @@ function MobileMenu({ isOpen, onClose, ...props }) {
 	return (
 		<div
 			aria-hidden={!isOpen}
-			className="absolute top-0 left-0 flex flex-col flex-1 w-full h-screen text-left bg-light dark:bg-dark"
+			className="absolute top-0 bottom-0 left-0 right-0 flex flex-col flex-1 w-full h-screen text-left bg-light dark:bg-dark"
 			{...props}
 		>
-			<div className="flex items-center h-16 px-12 py-10">
+			<div className="flex items-center h-16 py-10 pl-1 pr-12 lg:pl-12">
 				<Link href="/">
-					<a className="relative h-20 w-52">{siteLogo()}</a>
+					<a>{siteLogo()}</a>
 				</Link>
 				<div className="flex justify-end flex-[50%]">
 					<AiOutlineClose size="26" onClick={onClose} className="cursor-pointer" />

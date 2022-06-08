@@ -1,15 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
-import { useTheme } from "next-themes";
 
 import classNames from "classnames";
 
-import { useLoaded } from "../../store/customHook";
-
-function DesktopMenu({ isLoaded }) {
-	const loaded = useLoaded();
-	const { theme, systemTheme } = useTheme();
-
+function DesktopMenu() {
 	const menu = [
 		{
 			link: "/",
@@ -29,37 +22,8 @@ function DesktopMenu({ isLoaded }) {
 		},
 	];
 
-	const siteLogo = () => {
-		if (loaded) {
-			const currentTheme = theme === "system" ? systemTheme : theme;
-
-			if (currentTheme === "dark") {
-				return (
-					<Image
-						src="/icons/logo/logo-full-white-v2.svg"
-						alt="recodebrain white logo"
-						layout="fill"
-						objectFit="contain"
-					/>
-				);
-			} else {
-				return (
-					<Image
-						src="/icons/logo/logo-full-blue-v2.svg"
-						alt="recodebrain dark logo"
-						layout="fill"
-						objectFit="contain"
-					/>
-				);
-			}
-		}
-	};
-
 	return (
-		<nav className="flex-1 hidden lg:flex lg:flex-row lg:items-center lg:justify-between">
-			<Link href="/">
-				<a className="relative h-20 w-52">{siteLogo()}</a>
-			</Link>
+		<nav className="flex-1 hidden md:flex md:flex-row md:items-center md:justify-end">
 			<ul className="flex items-baseline space-x-16 text-base font-medium list-none">
 				{menu.map((m, index) => (
 					<li key={index} className="relative">
