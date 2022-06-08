@@ -11,8 +11,11 @@ import {
 	AiFillInfoCircle,
 } from "react-icons/ai";
 
+import { useLoaded } from "../../store/customHook";
+
 function MobileMenu({ isOpen, onClose, ...props }) {
-	const { theme, setTheme } = useTheme();
+	const loaded = useLoaded();
+	const { theme, systemTheme } = useTheme();
 
 	if (!isOpen) {
 		return <></>;
@@ -20,6 +23,32 @@ function MobileMenu({ isOpen, onClose, ...props }) {
 
 	const listStyle = `flex flex-1 items-center`;
 	const anchorStyle = `flex items-center flex-1 outline-none`;
+
+	const siteLogo = () => {
+		if (loaded) {
+			const currentTheme = theme === "system" ? systemTheme : theme;
+
+			if (currentTheme === "dark") {
+				return (
+					<Image
+						src="/icons/logo/logo-full-white-v2.svg"
+						alt="recodebrain white logo"
+						layout="fill"
+						objectFit="contain"
+					/>
+				);
+			} else {
+				return (
+					<Image
+						src="/icons/logo/logo-full-blue-v2.svg"
+						alt="recodebrain dark logo"
+						layout="fill"
+						objectFit="contain"
+					/>
+				);
+			}
+		}
+	};
 
 	return (
 		<div
@@ -29,23 +58,7 @@ function MobileMenu({ isOpen, onClose, ...props }) {
 		>
 			<div className="flex items-center h-16 px-12 py-10">
 				<Link href="/">
-					<a className="relative h-20 w-52">
-						{theme === "dark" ? (
-							<Image
-								src="/icons/logo/logo-full-white-v2.svg"
-								alt="recodebrain dark logo"
-								layout="fill"
-								objectFit="contain"
-							/>
-						) : (
-							<Image
-								src="/icons/logo/logo-full-blue-v2.svg"
-								alt="recodebrain dark logo"
-								layout="fill"
-								objectFit="contain"
-							/>
-						)}
-					</a>
+					<a className="relative h-20 w-52">{siteLogo()}</a>
 				</Link>
 				<div className="flex justify-end flex-[50%]">
 					<AiOutlineClose size="26" onClick={onClose} className="cursor-pointer" />

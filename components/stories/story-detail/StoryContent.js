@@ -117,6 +117,9 @@ function StoryContent({ content }) {
 			fontFamily: "var(--code-font) !important",
 			"&::before, &::after": { content: "none" },
 		},
+		"span.linenumber": {
+			display: "none !important",
+		},
 		'[data="highlight"]': {
 			background: "var(--code-highlight)",
 		},
@@ -133,7 +136,7 @@ function StoryContent({ content }) {
 				const caption = metastring?.match(/{caption: (.*?)}/)?.pop();
 				return (
 					<div className="w-full mt-8 mb-8">
-						<div className="relative w-[768px] h-[432px]">
+						<div className="relative w-full h-[432px]">
 							<Image
 								src={image.properties.src}
 								alt={image.properties.alt}

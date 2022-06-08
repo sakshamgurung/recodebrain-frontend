@@ -4,8 +4,11 @@ import { FaLinkedin, FaGithub, FaDev } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
 import { useTheme } from "next-themes";
 
+import { useLoaded } from "../../store/customHook";
+
 function Footer(props) {
-	const { theme, setTheme } = useTheme();
+	const loaded = useLoaded();
+	const { theme, systemTheme } = useTheme();
 
 	const explore = [
 		{
@@ -66,28 +69,38 @@ function Footer(props) {
 		},
 	];
 
+	const siteLogo = () => {
+		if (loaded) {
+			const currentTheme = theme === "system" ? systemTheme : theme;
+
+			if (currentTheme === "dark") {
+				return (
+					<Image
+						src="/icons/logo/logo-full-white-v2.svg"
+						alt="recodebrain white logo"
+						layout="fill"
+						objectFit="contain"
+					/>
+				);
+			} else {
+				return (
+					<Image
+						src="/icons/logo/logo-full-blue-v2.svg"
+						alt="recodebrain dark logo"
+						layout="fill"
+						objectFit="contain"
+					/>
+				);
+			}
+		}
+	};
+
 	return (
 		<footer className="bg-light dark:bg-dark mt-16 min-h-[12rem] border-t-[1px] dark:border-slate-100">
 			<div className="px-12 py-[5%] flex flex-col md:flex-row md:justify-between">
 				<div className="flex flex-col justify-start md:mr-24">
 					<Link href="/">
-						<a className="relative h-20 w-52">
-							{theme === "dark" ? (
-								<Image
-									src="/icons/logo/logo-full-white-v2.svg"
-									alt="recodebrain dark logo"
-									layout="fill"
-									objectFit="contain"
-								/>
-							) : (
-								<Image
-									src="/icons/logo/logo-full-blue-v2.svg"
-									alt="recodebrain dark logo"
-									layout="fill"
-									objectFit="contain"
-								/>
-							)}
-						</a>
+						<a className="relative h-20 w-52">{siteLogo()}</a>
 					</Link>
 					<span className="text-xs font-light">&copy; 2022, Recodebrain</span>
 				</div>

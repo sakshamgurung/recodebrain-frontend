@@ -52,7 +52,7 @@ function StoryHeader({ title, excerpt, image, author, meta }) {
 					<time>{readTime} min read</time>
 				</div>
 			</div>
-			<div className="relative w-[896px] h-[650px]">
+			<div className="relative w-full h-[425px]">
 				<Image
 					className="rounded-md md:h-80"
 					src={image}

@@ -1,10 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
-import classNames from "classnames";
 import { useTheme } from "next-themes";
 
-function DesktopMenu() {
-	const { theme, setTheme } = useTheme();
+import classNames from "classnames";
+
+import { useLoaded } from "../../store/customHook";
+
+function DesktopMenu({ isLoaded }) {
+	const loaded = useLoaded();
+	const { theme, systemTheme } = useTheme();
+
 	const menu = [
 		{
 			link: "/",
@@ -23,26 +28,37 @@ function DesktopMenu() {
 			title: "About",
 		},
 	];
+
+	const siteLogo = () => {
+		if (loaded) {
+			const currentTheme = theme === "system" ? systemTheme : theme;
+
+			if (currentTheme === "dark") {
+				return (
+					<Image
+						src="/icons/logo/logo-full-white-v2.svg"
+						alt="recodebrain white logo"
+						layout="fill"
+						objectFit="contain"
+					/>
+				);
+			} else {
+				return (
+					<Image
+						src="/icons/logo/logo-full-blue-v2.svg"
+						alt="recodebrain dark logo"
+						layout="fill"
+						objectFit="contain"
+					/>
+				);
+			}
+		}
+	};
+
 	return (
 		<nav className="flex-1 hidden lg:flex lg:flex-row lg:items-center lg:justify-between">
 			<Link href="/">
-				<a className="relative h-20 w-52">
-					{theme === "dark" ? (
-						<Image
-							src="/icons/logo/logo-full-white-v2.svg"
-							alt="recodebrain dark logo"
-							layout="fill"
-							objectFit="contain"
-						/>
-					) : (
-						<Image
-							src="/icons/logo/logo-full-blue-v2.svg"
-							alt="recodebrain dark logo"
-							layout="fill"
-							objectFit="contain"
-						/>
-					)}
-				</a>
+				<a className="relative h-20 w-52">{siteLogo()}</a>
 			</Link>
 			<ul className="flex items-baseline space-x-16 text-base font-medium list-none">
 				{menu.map((m, index) => (

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-// import dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
 import FocusLock from "react-focus-lock";
@@ -11,12 +11,11 @@ import { useTheme } from "next-themes";
 
 import { useLoaded } from "../../store/customHook";
 import DesktopMenu from "./DesktopMenu";
-import MobileMenu from "./MobileMenu";
-// const MobileMenu = dynamic(() => import("./MobileMenu"));
+const MobileMenu = dynamic(() => import("./MobileMenu"));
 
 function MainNavigation() {
 	const loaded = useLoaded();
-	const { theme, setTheme } = useTheme();
+	const { theme, setTheme, systemTheme } = useTheme();
 	const [clear, setClear] = useState(true);
 	const [lastScrollY, setLastScrollY] = useState(0);
 	const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
@@ -55,20 +54,42 @@ function MainNavigation() {
 
 	const toggleTheme = () => {
 		setTheme(theme === "dark" ? "light" : "dark");
-		const body = document.body;
-		if (theme === "dark") {
-			body.className = "text-gray-700 bg-light dark:bg-dark dark:text-slate-100";
-		} else {
-			body.className = "text-gray-700 bg-light dark:bg-dark dark:text-slate-100";
-		}
 	};
 
 	const toggleThemeIcon = () => {
 		if (loaded) {
-			if (theme === "dark") {
+			const currentTheme = theme === "system" ? systemTheme : theme;
+
+			if (currentTheme === "dark") {
 				return <BsSunFill size={20} />;
 			} else {
 				return <BsFillMoonStarsFill size={20} />;
+			}
+		}
+	};
+
+	const siteLogo = () => {
+		if (loaded) {
+			const currentTheme = theme === "system" ? systemTheme : theme;
+
+			if (currentTheme === "dark") {
+				return (
+					<Image
+						src="/icons/logo/logo-full-white-v2.svg"
+						alt="recodebrain white logo"
+						layout="fill"
+						objectFit="contain"
+					/>
+				);
+			} else {
+				return (
+					<Image
+						src="/icons/logo/logo-full-blue-v2.svg"
+						alt="recodebrain dark logo"
+						layout="fill"
+						objectFit="contain"
+					/>
+				);
 			}
 		}
 	};
@@ -85,23 +106,7 @@ function MainNavigation() {
 				className="flex flex-row items-center justify-between flex-1 lg:hidden"
 			>
 				<Link href="/">
-					<a className="relative h-20 w-52">
-						{theme === "dark" ? (
-							<Image
-								src="/icons/logo/logo-full-white-v2.svg"
-								alt="recodebrain dark logo"
-								layout="fill"
-								objectFit="contain"
-							/>
-						) : (
-							<Image
-								src="/icons/logo/logo-full-blue-v2.svg"
-								alt="recodebrain dark logo"
-								layout="fill"
-								objectFit="contain"
-							/>
-						)}
-					</a>
+					<a className="relative h-20 w-52">{siteLogo()}</a>
 				</Link>
 				<button aria-label="Toggle menu" aria-controls="mobile-menu" onClick={openMobileMenu}>
 					<FaHamburger size="26" />

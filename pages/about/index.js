@@ -4,8 +4,37 @@ import Head from "next/head";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 
+import { useLoaded } from "../../store/customHook";
+
 function AboutPage() {
-	const { theme, setTheme } = useTheme();
+	const loaded = useLoaded();
+	const { theme, systemTheme } = useTheme();
+
+	const aboutImage = () => {
+		if (loaded) {
+			const currentTheme = theme === "system" ? systemTheme : theme;
+
+			if (currentTheme === "dark") {
+				return (
+					<Image
+						src="/images/profile-dark.PNG"
+						alt="Image of recodebrain.com author"
+						width={310}
+						height={438.5}
+					/>
+				);
+			} else {
+				return (
+					<Image
+						src="/images/profile.PNG"
+						alt="Image of recodebrain.com author"
+						width={310}
+						height={438.5}
+					/>
+				);
+			}
+		}
+	};
 
 	return (
 		<Fragment>
@@ -18,21 +47,7 @@ function AboutPage() {
 				<h1 className="mb-8 text-4xl font-semibold text-center">About recodebrain</h1>
 				<div className="px-12 py-6 space-y-4 text-lg bg-white rounded-md shadow-md dark:shadow-none dark:bg-gray-800 font-base">
 					<div className="m-auto flex flex-row rounded-md shadow-md w-[310px] h-[438.5] overflow-clip">
-						{theme === "dark" ? (
-							<Image
-								src="/images/profile-dark.png"
-								alt="image of recodebrain.com author"
-								width="310"
-								height="438.5"
-							/>
-						) : (
-							<Image
-								src="/images/profile.png"
-								alt="image of recodebrain.com author"
-								width="310"
-								height="438.5"
-							/>
-						)}
+						{aboutImage()}
 					</div>
 					<p>
 						Recode brain is a site where I, as a fellow developer, want to share my idea, and
