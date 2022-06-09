@@ -16,7 +16,7 @@ function StoryHeader({ title, excerpt, image, author, meta }) {
 		: null;
 
 	return (
-		<header className="flex flex-col w-full max-w-4xl mb-10 mt-7">
+		<header className="flex flex-col w-full max-w-4xl px-5 mb-10 mt-7">
 			<RelatedTopics topics={topics} />
 			<h1 className="py-1 mb-2 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
 				{title}

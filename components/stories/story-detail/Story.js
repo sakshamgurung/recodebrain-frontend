@@ -1,3 +1,5 @@
+import { Fragment } from "react/cjs/react.production.min";
+
 import isEmpty from "lodash/isEmpty";
 
 import StoryContent from "./StoryContent";
@@ -9,21 +11,27 @@ import {
 	GoogleAdsenseVertical,
 	GoogleAdsenseInArticle,
 } from "components/google-services/GoogleAdsense";
+import { useMobileDetect } from "../../../store/customHook";
 
 function Story({ story, recommendedStories }) {
+	const currentDevice = useMobileDetect();
 	const imagePath = `${story.coverImage.url}`;
 
 	return (
 		<div className="flex flex-col max-w-[1600px] m-auto md:grid md:gap-2 md:grid-cols-[minmax(120px,_300px)_minmax(512px,_auto)_minmax(120px,_300px)] md:grid-rows-[900px_auto_auto]">
 			<div className="hidden md:inline md:row-start-2 md:row-end-4">
-				<GoogleAdsenseVertical
-					client={`${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
-					slot={`${process.env.NEXT_PUBLIC_ADSENSE_VERTICAL_SLOT_ID}`}
-				/>
-				<GoogleAdsenseVertical
-					client={`${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
-					slot={`${process.env.NEXT_PUBLIC_ADSENSE_VERTICAL_SLOT_ID}`}
-				/>
+				{currentDevice.isMobile() ? null : (
+					<Fragment>
+						<GoogleAdsenseVertical
+							client={`${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
+							slot={`${process.env.NEXT_PUBLIC_ADSENSE_VERTICAL_SLOT_ID}`}
+						/>
+						<GoogleAdsenseVertical
+							client={`${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
+							slot={`${process.env.NEXT_PUBLIC_ADSENSE_VERTICAL_SLOT_ID}`}
+						/>
+					</Fragment>
+				)}
 			</div>
 			<div className="flex flex-col items-center md:row-span-full">
 				<StoryHeader
@@ -69,14 +77,18 @@ function Story({ story, recommendedStories }) {
 				/>
 			</div>
 			<div className="hidden md:inline md:row-start-2 md:row-end-4">
-				<GoogleAdsenseVertical
-					client={`${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
-					slot={`${process.env.NEXT_PUBLIC_ADSENSE_VERTICAL_SLOT_ID}`}
-				/>
-				<GoogleAdsenseVertical
-					client={`${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
-					slot={`${process.env.NEXT_PUBLIC_ADSENSE_VERTICAL_SLOT_ID}`}
-				/>
+				{currentDevice.isMobile() ? null : (
+					<Fragment>
+						<GoogleAdsenseVertical
+							client={`${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
+							slot={`${process.env.NEXT_PUBLIC_ADSENSE_VERTICAL_SLOT_ID}`}
+						/>
+						<GoogleAdsenseVertical
+							client={`${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
+							slot={`${process.env.NEXT_PUBLIC_ADSENSE_VERTICAL_SLOT_ID}`}
+						/>
+					</Fragment>
+				)}
 			</div>
 		</div>
 	);
