@@ -42,6 +42,10 @@ body {
 	color: var(--typo-color-1);
 }
 
+ins.adsbygoogle[data-ad-status="unfilled"] {
+	display: none !important;
+}
+
 .copyCodeButton {
 	@apply z-10 absolute top-2 -right-6 bg-slate-700 hover:bg-slate-600 border-[1px] border-gray-500 rounded-md uppercase text-sm p-[.4rem_.3rem_.1rem] text-slate-100;
 }

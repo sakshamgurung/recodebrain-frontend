@@ -13,12 +13,12 @@ function Footer(props) {
 	const explore = [
 		{
 			icons: <BiLinkExternal size="20" />,
-			link: "/home",
+			link: "/",
 			title: "Home",
 		},
 		{
 			icons: <BiLinkExternal size="20" />,
-			link: "/topcis",
+			link: "/topics",
 			title: "Topics",
 		},
 		{

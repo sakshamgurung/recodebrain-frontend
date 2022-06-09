@@ -5,7 +5,10 @@ import StoryHeader from "./StoryHeader";
 import SerialList from "./SerialList";
 import RelatedStories from "./RelatedStories";
 import Newsletter from "../../ui/NewsLetter";
-import { GoogleAdsenseVertical, GoogleAdsenseInArticle } from "../../ui/GoogleAdsenseContainer";
+import {
+	GoogleAdsenseVertical,
+	GoogleAdsenseInArticle,
+} from "components/google-services/GoogleAdsense";
 
 function Story({ story, recommendedStories }) {
 	const imagePath = `${story.coverImage.url}`;
