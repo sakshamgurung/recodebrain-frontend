@@ -59,6 +59,7 @@ function StoryHeader({ title, excerpt, image, author, meta }) {
 					alt={title}
 					layout="fill"
 					objectFit="cover"
+					priority={true}
 				/>
 			</div>
 		</header>

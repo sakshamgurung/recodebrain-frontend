@@ -133,13 +133,14 @@ function MainNavigation() {
 				disabled={!isOpenMobileMenu}
 				className="flex flex-row items-center justify-end flex-1 md:hidden"
 			>
-				<button aria-label="Toggle menu" aria-controls="mobile-menu" onClick={openMobileMenu}>
+				<button aria-label="Toggle menu" aria-expanded={isOpenMobileMenu} onClick={openMobileMenu}>
 					<FaHamburger size="26" />
 				</button>
-				<MobileMenu id="mobile-menu" isOpen={isOpenMobileMenu} onClose={closeMobileMenu} />
+				<MobileMenu isOpen={isOpenMobileMenu} onClose={closeMobileMenu} />
 			</FocusLock>
 			<DesktopMenu />
 			<button
+				aria-label="Toggle light and dark theme"
 				onClick={toggleTheme}
 				className="border-l-[1px] border-gray-700 pl-6 ml-6 md:pl-8 md:ml-8"
 			>

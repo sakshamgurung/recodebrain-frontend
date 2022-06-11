@@ -132,6 +132,7 @@ function StoryContent({ content }) {
 			if (node.children[0].tagName === "img") {
 				const image = node.children[0];
 				const metastring = image.properties?.alt;
+				const isPriority = metastring?.toLowerCase().match("{priority}");
 				const hasCaption = metastring?.toLowerCase().includes("{caption:");
 				const caption = metastring?.match(/{caption: (.*?)}/)?.pop();
 				return (
@@ -142,6 +143,7 @@ function StoryContent({ content }) {
 								alt={image.properties.alt}
 								layout="fill"
 								objectFit="contain"
+								priority={isPriority}
 							/>
 						</div>
 						{hasCaption ? (
