@@ -28,7 +28,7 @@ function Story({ story, recommendedStories }) {
 						/>
 						<GoogleAdsenseVertical
 							client={`${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
-							slot={`${process.env.NEXT_PUBLIC_ADSENSE_VERTICAL_SLOT_ID}`}
+							slot={`${process.env.NEXT_PUBLIC_ADSENSE_VERTICAL_SLOT_ID_2}`}
 						/>
 					</Fragment>
 				)}
@@ -73,7 +73,7 @@ function Story({ story, recommendedStories }) {
 				</section>
 				<GoogleAdsenseInArticle
 					client={`${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
-					slot={`${process.env.NEXT_PUBLIC_ADSENSE_IN_ARTICLE_SLOT_ID}`}
+					slot={`${process.env.NEXT_PUBLIC_ADSENSE_IN_ARTICLE_SLOT_ID_2}`}
 				/>
 			</div>
 			<div className="hidden md:inline md:row-start-2 md:row-end-4">
@@ -81,7 +81,7 @@ function Story({ story, recommendedStories }) {
 					<Fragment>
 						<GoogleAdsenseVertical
 							client={`${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
-							slot={`${process.env.NEXT_PUBLIC_ADSENSE_VERTICAL_SLOT_ID}`}
+							slot={`${process.env.NEXT_PUBLIC_ADSENSE_VERTICAL_SLOT_ID_2}`}
 						/>
 						<GoogleAdsenseVertical
 							client={`${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}

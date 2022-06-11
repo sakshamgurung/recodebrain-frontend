@@ -9,22 +9,18 @@ export default function Document() {
 					name="keywords"
 					content="Web, Software, Technology, Programming, JavaScript, React.js, React Native, Next.js"
 				/>
-				<script
-					async
-					src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
-				/>
-				<script
-					dangerouslySetInnerHTML={{
-						__html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_ANALYTICS_ID}');
-            `,
-					}}
-				/>
 			</Head>
 			<body className="text-gray-700 bg-light dark:bg-dark dark:text-slate-100">
+				{/* <!-- Google Tag Manager (noscript) --> */}
+				<noscript>
+					<iframe
+						src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID}`}
+						height="0"
+						width="0"
+						style={{ display: "none", visibility: "hidden" }}
+					></iframe>
+				</noscript>
+				{/* <!-- End Google Tag Manager (noscript) --> */}
 				<Main />
 				<NextScript />
 			</body>
