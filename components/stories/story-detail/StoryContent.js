@@ -22,12 +22,32 @@ SyntaxHighlighter.registerLanguage("css", css);
 
 function StoryContent({ content }) {
 	const styleMarkdown = emotionCSS({
+		a: {
+			textDecoration: "none",
+		},
+		h2: {
+			position: "relative",
+			margin: "0.75rem 0 0.75rem",
+			scrollMarginTop: "6rem",
+			a: {
+				"&:hover": {
+					"&::before": {
+						content: '"#"',
+						position: "absolute",
+						top: -1,
+						left: -20,
+						fontFamily: "var(--code-font)",
+						fontWeight: "bold",
+						color: "var(--code-color)",
+					},
+				},
+			},
+		},
 		h3: {
 			position: "relative",
 			margin: "0.75rem 0 0.75rem",
-			scrollMarginTop: "4rem",
+			scrollMarginTop: "6rem",
 			a: {
-				textDecoration: "none",
 				"&:hover": {
 					"&::before": {
 						content: '"#"',
@@ -36,7 +56,7 @@ function StoryContent({ content }) {
 						left: -17,
 						fontFamily: "var(--code-font)",
 						fontWeight: "bold",
-						color: "var(--code-highlight)",
+						color: "var(--code-color)",
 					},
 				},
 			},
@@ -134,18 +154,27 @@ function StoryContent({ content }) {
 				const metastring = image.properties?.alt;
 				const isPriority = metastring?.toLowerCase().match("{priority}");
 				const hasCaption = metastring?.toLowerCase().includes("{caption:");
+				const metaWidth = metastring.match(/{([^}]+)x/);
+				const metaHeight = metastring.match(/x([^}]+)}/);
+				let width = metaWidth ? metaWidth[1] : "768";
+				let height = metaHeight ? metaHeight[1] : "432";
 				const caption = metastring?.match(/{caption: (.*?)}/)?.pop();
+
+				if (parseInt(width) > 768) {
+					width = 768;
+					height = 768 * (parseInt(height) / parseInt(width));
+				}
+
 				return (
 					<div className="w-full mt-8 mb-8">
-						<div className="relative w-full h-[432px]">
-							<Image
-								src={image.properties.src}
-								alt={image.properties.alt}
-								layout="fill"
-								objectFit="contain"
-								priority={isPriority}
-							/>
-						</div>
+						<Image
+							src={image.properties.src}
+							alt={image.properties.alt}
+							width={width}
+							height={height}
+							objectFit="contain"
+							priority={isPriority}
+						/>
 						{hasCaption ? (
 							<div
 								className="mt-4 font-mono text-base italic font-medium text-center"
@@ -169,6 +198,25 @@ function StoryContent({ content }) {
 				);
 			}
 			return <a href={href}>{children}</a>;
+		},
+		h2: (props) => {
+			const arr = props.children;
+			let heading = "";
+
+			for (let i = 0; i < arr.length; i++) {
+				if (arr[i]?.type !== undefined) {
+					for (let j = 0; j < arr[i].props.children.length; j++) {
+						heading += arr[i]?.props?.children[0];
+					}
+				} else heading += arr[i];
+			}
+
+			const slug = generateSlug(heading);
+			return (
+				<h2 id={slug}>
+					<a href={`#${slug}`} {...props}></a>
+				</h2>
+			);
 		},
 		h3: (props) => {
 			const arr = props.children;
