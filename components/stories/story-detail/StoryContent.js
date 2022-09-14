@@ -13,12 +13,14 @@ import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
 import java from "react-syntax-highlighter/dist/cjs/languages/prism/java";
 import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
 import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
+import json from "react-syntax-highlighter/dist/cjs/languages/prism/json";
 
 import generateSlug from "../../../lib/generateSlug";
 
 SyntaxHighlighter.registerLanguage("java", java);
 SyntaxHighlighter.registerLanguage("js", js);
 SyntaxHighlighter.registerLanguage("css", css);
+SyntaxHighlighter.registerLanguage("json", json);
 
 function StoryContent({ content }) {
 	const styleMarkdown = emotionCSS({
@@ -107,7 +109,7 @@ function StoryContent({ content }) {
 			},
 		},
 		pre: {
-			padding: 0,
+			padding: "10px 4px",
 			margin: "1rem -2rem",
 			boxShadow: "0 10px 8px rgb(0, 0, 0,  0.04) , 0 4px 3px rgb(0, 0, 0 , 0.1)",
 		},
@@ -138,7 +140,7 @@ function StoryContent({ content }) {
 			"&::before, &::after": { content: "none" },
 		},
 		"span.linenumber": {
-			display: "none !important",
+			display: "true !important",
 		},
 		'[data="highlight"]': {
 			background: "var(--code-highlight)",
