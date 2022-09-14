@@ -50,7 +50,7 @@ export async function getStaticProps(context) {
 
 	return {
 		props: { stories, serial },
-		revalidate: 3600,
+		revalidate: 604800,
 	};
 }
 

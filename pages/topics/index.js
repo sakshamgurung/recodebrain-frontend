@@ -43,7 +43,7 @@ export async function getStaticProps() {
 		props: {
 			topics,
 		},
-		revalidate: 3600,
+		revalidate: 604800,
 	};
 }
 

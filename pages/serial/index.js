@@ -41,7 +41,7 @@ export async function getStaticProps() {
 	const serials = await loadSerials();
 
 	if (isEmpty(serials.data)) {
-		return { props: { notFound: true }, revalidate: 3600 };
+		return { props: { notFound: true }, revalidate: 604800 };
 	}
 
 	return {
@@ -49,7 +49,7 @@ export async function getStaticProps() {
 			notFound: false,
 			serials,
 		},
-		revalidate: 3600,
+		revalidate: 604800,
 	};
 }
 
