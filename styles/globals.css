@@ -22,7 +22,6 @@
 	--icon-info: url("/icons/note-dark.svg");
 
 	--code-color-light: #4338ca;
-	--code-color-light-2: #24af52;
 	--code-color-dark: #38ca69;
 	--code-highlight: #374151;
 	--code-font: "JetBrains Mono", Monaco, "Courier New", monospace;
@@ -33,7 +32,7 @@ html[class="dark"] {
 }
 
 html[class="light"] {
-	--code-color: var(--code-color-light-2);
+	--code-color: var(--code-color-light);
 }
 
 body {

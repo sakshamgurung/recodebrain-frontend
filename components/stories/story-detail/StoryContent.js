@@ -189,7 +189,7 @@ function StoryContent({ content }) {
 				);
 			}
 
-			return <p>{children}</p>;
+			return <p className="m-4">{children}</p>;
 		},
 		a: ({ href, children }) => {
 			if (href.match("http")) {
@@ -304,7 +304,7 @@ function StoryContent({ content }) {
 	};
 
 	return (
-		<article className="w-full max-w-3xl px-5 py-4 prose prose-lg prose-li:marker:marker:text-gray-500 dark:prose-invert">
+		<article className="w-full max-w-3xl px-5 py-4 leading-normal prose prose-lg prose-li:marker:text-gray-700 dark:prose-invert prose-a:font-normal hover:prose-a:underline">
 			<ReactMarkdown
 				css={styleMarkdown}
 				remarkPlugins={[remarkGfm]}
