@@ -7,14 +7,11 @@ import advanceFormat from "dayjs/plugin/advancedFormat";
 
 function StoryCard({ story }) {
 	dayjs.extend(advanceFormat);
-	const { slug, title, publishedAt, coverImage, readTime, author } = story;
-	const coverImagePath = `${coverImage.url}`;
+	const { slug, title, publishedAt, thumbnail, readTime, author } = story;
 	const linkPath = `/${slug}`;
 	const authorName = `${author.firstName} ${author.lastName}`;
 	const publishedDate = dayjs(publishedAt).format("MMM Do YYYY");
-	let profilePicturePath = !isNull(author.profilePicture?.data)
-		? `${author.profilePicture.data.attributes.url}`
-		: null;
+	let profilePicturePath = !isNull(author.profileImage) ? `${author.profileImage}` : null;
 
 	return (
 		<article className="grid grid-rows-[auto_minmax(80px,_auto)_70px] gap-0 border-[1px] border-gray-300 bg-slate-100 rounded-b-lg hover:shadow-md dark:hover:shadow-none dark:bg-gray-800">
@@ -27,7 +24,7 @@ function StoryCard({ story }) {
 							// loader={({ src }) => {
 							// 	return src;
 							// }}
-							src={coverImagePath}
+							src={thumbnail}
 							alt={story.slug}
 							layout="fill"
 							objectFit="cover"
@@ -46,7 +43,7 @@ function StoryCard({ story }) {
 					<Link href="/about">
 						<a>
 							<div className="relative flex items-center justify-center w-14 h-14">
-								{isNull(author.profilePicture.data) ? (
+								{isNull(author.profileImage) ? (
 									<AiOutlineSmile size="40" />
 								) : (
 									<Image

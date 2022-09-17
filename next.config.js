@@ -15,7 +15,11 @@
 const nextConfig = {
 	reactStrictMode: true,
 	images: {
-		domains: ["localhost", "recodebrain-strapi-media.sgp1.digitaloceanspaces.com"],
+		domains: [
+			"localhost",
+			"recodebrain-strapi-media.sgp1.digitaloceanspaces.com",
+			"drive.google.com",
+		],
 	},
 };
 
