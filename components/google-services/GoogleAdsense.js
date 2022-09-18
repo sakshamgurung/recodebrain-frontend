@@ -25,7 +25,7 @@ export function GoogleAdsenseVertical({ client, slot }) {
 				data-ad-format="auto"
 				data-full-width-responsive="true"
 			>
-				<span className="text-xs">Advertisment</span>
+				<span className="text-xs">Advertisement</span>
 			</ins>
 		</div>
 	);
@@ -46,7 +46,7 @@ export function GoogleAdsenseInArticle({ client, slot }) {
 				data-ad-layout="in-article"
 				data-ad-format="fluid"
 			>
-				<span className="text-xs">Advertisment</span>
+				<span className="text-xs">Advertisement</span>
 			</ins>
 		</div>
 	);

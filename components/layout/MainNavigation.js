@@ -127,7 +127,7 @@ function MainNavigation() {
 			)}
 		>
 			<Link href="/">
-				<a>{siteLogo()}</a>
+				<a aria-label="Home page link">{siteLogo()}</a>
 			</Link>
 			<FocusLock
 				disabled={!isOpenMobileMenu}

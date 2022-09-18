@@ -5,10 +5,6 @@ export default function Document() {
 		<Html lang="en">
 			<Head>
 				<meta name="author" content="Sakchhyam" />
-				<meta
-					name="keywords"
-					content="Web, Software, Technology, Programming, JavaScript, React.js, React Native, Next.js"
-				/>
 			</Head>
 			<body className="text-gray-700 bg-light dark:bg-dark dark:text-slate-100">
 				{/* <!-- Google Tag Manager (noscript) --> */}

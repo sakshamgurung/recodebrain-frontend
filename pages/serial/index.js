@@ -15,6 +15,10 @@ function AllSerialPage(props) {
 		<Fragment>
 			<Head>
 				<title>All Serial / Series | RecodeBrain</title>
+				<meta
+					name="keywords"
+					content="Web, Software, Technology, Programming, JavaScript, React.js, React Native, Next.js"
+				/>
 				<meta name="description" content="Multi part series" />
 				<link rel="canonical" href={`${process.env.NEXT_PUBLIC_SITE_URL}/serial`} />
 			</Head>

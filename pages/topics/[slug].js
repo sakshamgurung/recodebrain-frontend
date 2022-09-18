@@ -33,7 +33,8 @@ function TopicPage(props) {
 		return (
 			<Fragment>
 				<Head>
-					<title>#{topic.name} stories | RecodeBrain</title>
+					<title>{topic.name} stories | RecodeBrain</title>
+					<meta name="keywords" content={topic.name} />
 					<meta name="description" content={topic.description} />
 					<link rel="canonical" href={`${process.env.NEXT_PUBLIC_SITE_URL}/404`} />
 				</Head>

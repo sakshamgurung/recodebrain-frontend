@@ -28,7 +28,7 @@ function StoryCardV2({ story, className }) {
 			<div className="flex flex-col flex-grow min-w-0 px-3 py-2">
 				<Link href={linkPath}>
 					<a>
-						<h1 className="text-xl font-semibold truncate h-9 hover:underline">{title}</h1>
+						<h2 className="text-xl font-semibold truncate h-9 hover:underline">{title}</h2>
 					</a>
 				</Link>
 				<p className="text-sm line-clamp-3">{excerpt}</p>

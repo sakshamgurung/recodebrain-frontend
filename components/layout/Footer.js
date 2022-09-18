@@ -100,13 +100,15 @@ function Footer(props) {
 			<div className="px-12 py-[5%] flex flex-col md:flex-row md:justify-between">
 				<div className="flex flex-col justify-start md:mr-24">
 					<Link href="/">
-						<a className="relative h-20 w-52">{siteLogo()}</a>
+						<a className="relative h-20 w-52" aria-label="Home page link">
+							{siteLogo()}
+						</a>
 					</Link>
 					<span className="text-xs font-light">&copy; 2022, Recodebrain</span>
 				</div>
 				<div className="flex flex-row flex-wrap justify-between flex-1 gap-10 mt-16 md:mt-0">
 					<div className="flex flex-col items-center">
-						<h1 className="mb-8 font-medium uppercase">Explore</h1>
+						<h2 className="mb-8 font-medium uppercase">Explore</h2>
 						<ul className="flex flex-col space-y-4">
 							{explore.map((e, index) => (
 								<li key={index}>
@@ -118,7 +120,7 @@ function Footer(props) {
 						</ul>
 					</div>
 					<div className="flex flex-col items-center">
-						<h1 className="mb-8 font-medium uppercase">Connect</h1>
+						<h2 className="mb-8 font-medium uppercase">Connect</h2>
 						<ul className="flex flex-col space-y-4">
 							{connects.map((connect, index) => (
 								<li key={index}>
@@ -137,7 +139,7 @@ function Footer(props) {
 						</ul>
 					</div>
 					<div className="flex flex-col items-center">
-						<h1 className="mb-8 font-medium uppercase">Powered By</h1>
+						<h2 className="mb-8 font-medium uppercase">Powered By</h2>
 						<ul className="flex flex-col space-y-4">
 							{poweredBy.map((tech, index) => (
 								<li key={index}>
