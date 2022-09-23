@@ -7,11 +7,14 @@ import { AiOutlineSmile } from "react-icons/ai";
 
 function SerialCard({ serial }) {
 	dayjs.extend(advanceFormat);
-	const { slug, title, publishedAt, thumbnail, author } = serial;
+	const { slug, title, publishedAt, coverImage, author } = serial;
+	const coverImagePath = `${coverImage.formats.small.url}`;
 	const linkPath = `/serial/${slug}`;
 	const authorName = `${author.firstName} ${author.lastName}`;
 	const publishedDate = dayjs(publishedAt).format("MMM Do YYYY");
-	let profilePicturePath = !isNull(author.profileImage) ? `${author.profileImage}` : null;
+	let profilePicturePath = isNull(author.profilePicture)
+		? null
+		: `${author.profilePicture.formats.thumbnail.url}`;
 
 	return (
 		<article className="grid grid-rows-[auto_minmax(80px,_auto)_70px] gap-0 border-[1px] border-gray-300 dark:bg-gray-800 rounded-b-lg hover:shadow-md dark:hover:shadow-none">
@@ -20,7 +23,7 @@ function SerialCard({ serial }) {
 					<div className="relative max-w-full h-[300px]">
 						<Image
 							className="duration-300 ease-in hover:scale-110"
-							src={thumbnail}
+							src={coverImagePath}
 							alt={serial.slug}
 							layout="fill"
 							objectFit="cover"
@@ -39,7 +42,7 @@ function SerialCard({ serial }) {
 					<Link href="/about">
 						<a>
 							<div className="relative flex items-center justify-center w-14 h-14">
-								{isNull(author.profileImage) ? (
+								{profilePicturePath === null ? (
 									<AiOutlineSmile size="40" />
 								) : (
 									<Image

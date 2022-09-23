@@ -7,11 +7,14 @@ import advanceFormat from "dayjs/plugin/advancedFormat";
 
 function StoryCardV2({ story, className }) {
 	dayjs.extend(advanceFormat);
-	const { author, thumbnail, excerpt, publishedAt, readTime, slug, title } = story;
+	const { author, coverImage, excerpt, publishedAt, readTime, slug, title } = story;
 	const linkPath = `/${slug}`;
 	const authorName = `${author.firstName} ${author.lastName}`;
+	const coverImagePath = `${coverImage.formats.small.url}`;
 	const publishedDate = dayjs(publishedAt).format("MMM Do YYYY");
-	let profilePicturePath = !isNull(author.profileImage) ? `${author.profileImage}` : null;
+	let profilePicturePath = isNull(author.profilePicture)
+		? null
+		: `${author.profilePicture.formats.thumbnail.url}`;
 
 	return (
 		<article
@@ -21,7 +24,7 @@ function StoryCardV2({ story, className }) {
 			<Link href={linkPath}>
 				<a>
 					<div className="relative w-full h-[200px] md:w-[200px] md:h-[200px]">
-						<Image src={thumbnail} alt={slug} layout="fill" objectFit="cover" />
+						<Image src={coverImagePath} alt={slug} layout="fill" objectFit="cover" />
 					</div>
 				</a>
 			</Link>
@@ -37,7 +40,7 @@ function StoryCardV2({ story, className }) {
 						<Link href="/about">
 							<a>
 								<div className="relative overflow-hidden rounded-md w-14 h-14">
-									{isNull(author.profileImage) ? (
+									{profilePicturePath === null ? (
 										<AiOutlineSmile size="40" />
 									) : (
 										<Image

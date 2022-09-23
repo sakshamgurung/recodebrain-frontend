@@ -156,8 +156,8 @@ function StoryContent({ content }) {
 				const metastring = image.properties?.alt;
 				const isPriority = metastring?.toLowerCase().match("{priority}");
 				const hasCaption = metastring?.toLowerCase().includes("{caption:");
-				const metaWidth = metastring.match(/{([^}]+)x/);
-				const metaHeight = metastring.match(/x([^}]+)}/);
+				const metaWidth = metastring.match(/{([^}]+)xx/);
+				const metaHeight = metastring.match(/xx([^}]+)}/);
 				let width = metaWidth ? metaWidth[1] : "768";
 				let height = metaHeight ? metaHeight[1] : "432";
 				const caption = metastring?.match(/{caption: (.*?)}/)?.pop();
@@ -194,7 +194,7 @@ function StoryContent({ content }) {
 		a: ({ href, children }) => {
 			if (href.match("http")) {
 				return (
-					<a href={href} target="_blank" rel="noopener noreferrer">
+					<a href={href} target="_blank" rel="noopener noreferrer" aria-label={children[0]}>
 						{children}
 					</a>
 				);

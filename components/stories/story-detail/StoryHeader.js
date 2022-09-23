@@ -11,7 +11,9 @@ function StoryHeader({ title, excerpt, image, author, meta }) {
 	const { publishedAt, readTime, topics } = meta;
 	const authorName = `${author.firstName} ${author.lastName}`;
 	const publishedDate = dayjs(publishedAt).format("MMM Do YYYY");
-	let profilePicturePath = !isNull(author.profileImage) ? `${author.profileImage}` : null;
+	let profilePicturePath = isNull(author.profilePicture)
+		? null
+		: `${author.profilePicture.formats.thumbnail.url}`;
 
 	return (
 		<header className="flex flex-col w-full max-w-4xl px-5 mb-10 mt-7">
@@ -24,7 +26,7 @@ function StoryHeader({ title, excerpt, image, author, meta }) {
 				<Link href="/about">
 					<a>
 						<div className="relative w-12 h-12 overflow-hidden rounded-md">
-							{isNull(author.profileImage) ? (
+							{profilePicturePath === null ? (
 								<AiOutlineSmile size="40" />
 							) : (
 								<Image

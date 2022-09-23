@@ -15,7 +15,7 @@ import { useMobileDetect } from "../../../store/customHook";
 
 function Story({ story, recommendedStories }) {
 	const currentDevice = useMobileDetect();
-	const imagePath = `${story.thumbnail}`;
+	const imagePath = `${story.coverImage.formats.medium.url}`;
 
 	return (
 		<div className="flex flex-col max-w-[1600px] m-auto md:grid md:gap-2 md:grid-cols-[minmax(120px,_300px)_minmax(512px,_auto)_minmax(120px,_300px)] md:grid-rows-[900px_auto_auto]">
