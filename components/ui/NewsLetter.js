@@ -1,6 +1,7 @@
 import { useEffect, useContext } from "react";
 
-import axios from "axios";
+import dynamic from "next/dynamic";
+const axios = dynamic(() => import("axios"));
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";

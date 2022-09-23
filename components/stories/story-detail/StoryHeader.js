@@ -1,10 +1,11 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import Link from "next/link";
+const Link = dynamic(() => import("next/link"));
 import isNull from "lodash/isNull";
 import { AiOutlineSmile } from "react-icons/ai";
 import dayjs from "dayjs";
 import advanceFormat from "dayjs/plugin/advancedFormat";
-import RelatedTopics from "./RelatedTopics";
+const RelatedTopics = dynamic(() => import("./RelatedTopics"));
 
 function StoryHeader({ title, excerpt, image, author, meta }) {
 	dayjs.extend(advanceFormat);

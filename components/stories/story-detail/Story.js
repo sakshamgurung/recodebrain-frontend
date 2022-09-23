@@ -1,12 +1,19 @@
 import { Fragment } from "react/cjs/react.production.min";
 
+import dynamic from "next/dynamic";
 import isEmpty from "lodash/isEmpty";
 
 import StoryContent from "./StoryContent";
 import StoryHeader from "./StoryHeader";
-import SerialList from "./SerialList";
-import RelatedStories from "./RelatedStories";
-import Newsletter from "../../ui/NewsLetter";
+const SerialList = dynamic(() => import("./SerialList"), {
+	ssr: false,
+});
+const RelatedStories = dynamic(() => import("./RelatedStories"), {
+	ssr: false,
+});
+const NewsLetter = dynamic(() => import("../../ui/NewsLetter"), {
+	ssr: false,
+});
 import {
 	GoogleAdsenseVertical,
 	GoogleAdsenseInArticle,
@@ -67,7 +74,7 @@ function Story({ story, recommendedStories }) {
 						<div className="flex flex-col items-center">
 							<h3 className="font-mono text-2xl font-medium">Newsletter</h3>
 							<p className="mb-2 text-sm italic">Get email about new stories.</p>
-							<Newsletter />
+							<NewsLetter />
 						</div>
 					</div>
 				</section>

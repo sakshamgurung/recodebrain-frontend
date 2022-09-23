@@ -1,4 +1,5 @@
-import Link from "next/link";
+import dynamic from "next/dynamic";
+const Link = dynamic(() => import("next/link"));
 import classNames from "classnames";
 
 function SerialList({ serialDetail, stories, currentPath }) {
