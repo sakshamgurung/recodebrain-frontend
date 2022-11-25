@@ -105,6 +105,11 @@ function Footer(props) {
 						</a>
 					</Link>
 					<span className="text-xs font-light">&copy; 2022, Recodebrain</span>
+					<Link href="https://www.digitalocean.com/?refcode=71702f3fa552&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge">
+						<a className="pt-6" target="_blank" rel="noopener noreferrer">
+							<img src="icons/logo/digital-ocean-badge.svg" alt="DigitalOcean Referral Badge" />
+						</a>
+					</Link>
 				</div>
 				<div className="flex flex-row flex-wrap justify-between flex-1 gap-10 mt-16 md:mt-0">
 					<div className="flex flex-col items-center">
