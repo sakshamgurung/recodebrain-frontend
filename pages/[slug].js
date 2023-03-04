@@ -6,14 +6,17 @@ import Story from "components/stories/story-detail/Story";
 import { loadStoryList, loadStoryDetail, loadRecommendedStories } from "../lib/api-util";
 
 function StoryDetailPage(props) {
-	const [title, keywords, description] = props.story.storySEO;
+	const metaTitle = props.story.seo.metaTitle;
+	const keywords = props.story.seo.keywords;
+	const metaDescription = props.story.seo.metaDescription;
+	const metaImage = props.story.seo.metaImage;
 
 	const addStoryJsonLd = () => {
 		return {
 			__html: `{
 				"@context": "https://schema.org/",
 				"@type": "NewsArticle",
-				"headline":"${title.seoDescription}",
+				"headline":"${metaTitle}",
 				"image":["${props.story.thumbnail}"],
 				"datePublished":"${props.story.publishedAt}",
 				"dateModified":"${props.story.updatedAt}",
@@ -34,24 +37,49 @@ function StoryDetailPage(props) {
 	return (
 		<Fragment>
 			<Head>
-				<title>{title.seoDescription}</title>
-				<meta name="keywords" content={keywords.seoDescription} />
-				<meta name="description" content={description.seoDescription} />
-
+				<title>{metaTitle}</title>
+				<meta name="keywords" content={keywords} />
+				<meta name="description" content={metaDescription} />
 				{/* Twitter */}
-				<meta name="twitter:card" content="summary" key="twcard" />
-
+				<meta name="twitter:card" content="summary_large_image" key="twcard" />
+				<meta name="twitter:title" content={metaTitle} key="twtitle" />
+				<meta name="twitter:description" content={metaDescription} key="twdesc" />
+				<meta
+					name="twitter:image"
+					content={metaImage.data.attributes.formats.thumbnail.url}
+					key="twimage"
+				/>
+				<meta
+					name="twitter:image:src"
+					content={metaImage.data.attributes.formats.thumbnail.url}
+					key="twimagesrc"
+				/>
+				<meta name="twitter:image:alt" content={metaTitle} key="twimage" />
 				{/* Open Graph */}
+				<meta property="og:title" content={metaTitle} key="ogtitle" />
+				<meta property="og:description" content={metaDescription} key="ogdesc" />
+				<meta property="og:site_name" content="recodebrain.com" key="ogsitename" />
 				<meta
 					property="og:url"
 					content={`${process.env.NEXT_PUBLIC_SITE_URL}/${props.story.slug}`}
 					key="ogurl"
 				/>
-				<meta property="og:image" content={props.story.thumbnail} key="ogimage" />
-				<meta property="og:image:alt" content={title.seoDescription} key="ogimage" />
-				<meta property="og:site_name" content="recodebrain.com" key="ogsitename" />
-				<meta property="og:title" content={title.seoDescription} key="ogtitle" />
-				<meta property="og:description" content={description.seoDescription} key="ogdesc" />
+				<meta
+					property="og:image"
+					content={metaImage.data.attributes.formats.thumbnail.url}
+					key="ogimage"
+				/>
+				<meta
+					property="og:image:url"
+					content={metaImage.data.attributes.formats.thumbnail.url}
+					key="ogimageurl"
+				/>
+				<meta
+					property="og:image:secure_url"
+					content={metaImage.data.attributes.formats.thumbnail.url}
+					key="ogimagesecureurl"
+				/>
+				<meta property="og:image:alt" content={metaTitle} key="ogimage" />
 
 				<link rel="canonical" href={`${process.env.NEXT_PUBLIC_SITE_URL}/${props.story.slug}`} />
 				<script
