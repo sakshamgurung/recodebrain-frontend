@@ -96,7 +96,7 @@ function Footer(props) {
 	};
 
 	return (
-		<footer className="bg-light dark:bg-dark mt-16 min-h-[12rem] border-t-[1px] dark:border-slate-100">
+		<footer className="bg-light dark:bg-dark mt-16 min-h-[12rem] border-t-[1px] dark:border-slate-100 z-10">
 			<div className="px-12 py-[5%] flex flex-col md:flex-row md:justify-between">
 				<div className="flex flex-col justify-start md:mr-24">
 					<Link href="/">

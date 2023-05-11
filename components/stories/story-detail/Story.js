@@ -1,5 +1,4 @@
 import { Fragment } from "react/cjs/react.production.min";
-
 import dynamic from "next/dynamic";
 import isEmpty from "lodash/isEmpty";
 
@@ -14,6 +13,9 @@ const RelatedStories = dynamic(() => import("./RelatedStories"), {
 const NewsLetter = dynamic(() => import("../../ui/NewsLetter"), {
 	ssr: false,
 });
+const StoryShare = dynamic(() => import("./StoryShare"), { ssr: false });
+const ScrollButton = dynamic(() => import("../../ui/ScrollButton"), { ssr: false });
+
 import {
 	GoogleAdsenseVertical,
 	GoogleAdsenseInArticle,
@@ -52,6 +54,7 @@ function Story({ story, recommendedStories }) {
 						updatedAt: story.updatedAt,
 						topics: story.topics,
 					}}
+					slug={`${story.slug}`}
 				/>
 				{story.isSeries ? (
 					<SerialList
@@ -61,7 +64,15 @@ function Story({ story, recommendedStories }) {
 					/>
 				) : null}
 				<StoryContent content={story.content} />
+
+				<div className="mb-4">
+					<StoryShare link={"https://recodebrain.com/" + story.slug} title={story.title} />
+				</div>
+
 				{!isEmpty(recommendedStories) ? <RelatedStories stories={recommendedStories} /> : null}
+
+				<ScrollButton />
+
 				<GoogleAdsenseInArticle
 					client={`${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
 					slot={`${process.env.NEXT_PUBLIC_ADSENSE_IN_ARTICLE_SLOT_ID}`}

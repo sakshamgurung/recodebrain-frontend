@@ -5,9 +5,11 @@ import isNull from "lodash/isNull";
 import { AiOutlineSmile } from "react-icons/ai";
 import dayjs from "dayjs";
 import advanceFormat from "dayjs/plugin/advancedFormat";
-const RelatedTopics = dynamic(() => import("./RelatedTopics"));
 
-function StoryHeader({ title, excerpt, image, author, meta }) {
+const RelatedTopics = dynamic(() => import("./RelatedTopics"));
+import StoryShare from "./StoryShare";
+
+function StoryHeader({ title, excerpt, image, author, meta, slug }) {
 	dayjs.extend(advanceFormat);
 	const { publishedAt, readTime, topics } = meta;
 	const authorName = `${author.firstName} ${author.lastName}`;
@@ -52,6 +54,9 @@ function StoryHeader({ title, excerpt, image, author, meta }) {
 					<time>{publishedDate}</time>
 					<time>{readTime} min read</time>
 				</div>
+			</div>
+			<div className="mb-4">
+				<StoryShare link={"https://recodebrain.com/" + slug} title={title} />
 			</div>
 			<div className="relative w-full h-[425px]">
 				<Image
