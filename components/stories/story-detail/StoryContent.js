@@ -14,6 +14,8 @@ import java from "react-syntax-highlighter/dist/cjs/languages/prism/java";
 import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
 import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
 import json from "react-syntax-highlighter/dist/cjs/languages/prism/json";
+import { IoIosCopy } from "react-icons/io";
+import { MdCheck } from "react-icons/md";
 
 import generateSlug from "../../../lib/generateSlug";
 
@@ -260,12 +262,20 @@ function StoryContent({ content }) {
 				<div className="relative mb-4">
 					<button
 						className={classNames(
-							"copyCodeButton active:after:content-[var(--gicon-white-check)]",
-							{ "after:content-[var(--gicon-white-check)]": codeCopied },
-							{ "after:content-[var(--gicon-white-clone)]": !codeCopied }
+							"copyCodeButton",
+							{ "border-green-600": codeCopied },
+							{ "border-gray-600": !codeCopied }
 						)}
 						onClick={() => handleCopyCode(codeChunk)}
-					/>
+						disabled={codeCopied}
+						aria-label="Copy Code"
+					>
+						{codeCopied === false ? (
+							<IoIosCopy size="20" color="#cbd5e1" /> //slate-300
+						) : (
+							<MdCheck size="20" color="#16a34a" /> //green-600
+						)}
+					</button>
 					<pre {...pre}></pre>
 				</div>
 			);

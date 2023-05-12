@@ -17,8 +17,6 @@
 	--typo-color-1: rgb(55, 65, 81);
 	--typo-color-2: #f1f5f9;
 
-	--gicon-white-clone: url("/icons/content_copy_white.svg");
-	--gicon-white-check: url("/icons/check_box_white.svg");
 	--icon-info: url("/icons/note-dark.svg");
 
 	--code-color-light: #3b30b2;
@@ -47,7 +45,7 @@ ins.adsbygoogle[data-ad-status="unfilled"] {
 }
 
 .copyCodeButton {
-	@apply z-10 absolute top-3 right-3 bg-slate-700 hover:bg-slate-600 border-[1px] border-gray-500 rounded-md uppercase text-sm p-[.4rem_.3rem_.1rem] text-slate-100;
+	@apply z-10 absolute top-3 right-3 bg-slate-700 hover:bg-slate-600 border-[1px] rounded-md p-[.2rem] text-slate-100;
 }
 
 .newsletter-input {
