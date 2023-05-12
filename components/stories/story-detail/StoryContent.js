@@ -9,7 +9,7 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import rangeParser from "parse-numeric-range";
-import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
+import a11yDark from "react-syntax-highlighter/dist/cjs/styles/prism/a11y-dark";
 import java from "react-syntax-highlighter/dist/cjs/languages/prism/java";
 import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
 import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
@@ -29,39 +29,43 @@ function StoryContent({ content }) {
 		},
 		h2: {
 			position: "relative",
-			margin: "0.75rem 0 0.75rem",
+			margin: "1.5rem 0 1rem",
+			paddingBottom: "0.4rem",
 			scrollMarginTop: "6rem",
-			a: {
-				"&:hover": {
-					"&::before": {
-						content: '"#"',
-						position: "absolute",
-						top: -1,
-						left: -20,
-						fontFamily: "var(--code-font)",
-						fontWeight: "bold",
-						color: "var(--code-color)",
-					},
+			fontWeight: "600",
+			borderBottom: " 1px solid #94a3b8",
+			// a: {
+			"&:hover": {
+				"&::before": {
+					content: '"#"',
+					position: "absolute",
+					top: -1,
+					left: -20,
+					fontFamily: "var(--code-font)",
+					fontWeight: "bold",
+					color: "var(--code-color)",
 				},
 			},
+			// },
 		},
 		h3: {
 			position: "relative",
-			margin: "0.75rem 0 0.75rem",
+			margin: "1.5rem 0 1rem",
 			scrollMarginTop: "6rem",
-			a: {
-				"&:hover": {
-					"&::before": {
-						content: '"#"',
-						position: "absolute",
-						top: -1,
-						left: -17,
-						fontFamily: "var(--code-font)",
-						fontWeight: "bold",
-						color: "var(--code-color)",
-					},
+			fontWeight: "600",
+			// a: {
+			"&:hover": {
+				"&::before": {
+					content: '"#"',
+					position: "absolute",
+					top: -1,
+					left: -17,
+					fontFamily: "var(--code-font)",
+					fontWeight: "bold",
+					color: "var(--code-color)",
 				},
 			},
+			// },
 		},
 		blockquote: {
 			borderLeftColor: "var(--code-color)",
@@ -103,14 +107,15 @@ function StoryContent({ content }) {
 			fontFamily: "var(--code-font)",
 			fontStyle: "normal",
 			fontSize: 14,
+			fontWeight: 500,
 			textShadow: "none",
 			"@media(min-width: 768px)": {
 				fontSize: 16,
 			},
 		},
 		pre: {
-			padding: "10px 4px",
-			margin: "1rem -2rem",
+			padding: "1rem",
+			margin: "0",
 			boxShadow: "0 10px 8px rgb(0, 0, 0,  0.04) , 0 4px 3px rgb(0, 0, 0 , 0.1)",
 		},
 		".codeStyle": {
@@ -129,7 +134,6 @@ function StoryContent({ content }) {
 		code: {
 			wordWrap: "break-word",
 			color: "var(--code-color)",
-			padding: 2,
 			"&::before, &::after": {
 				content: '"`"',
 				color: "var(--code-color)",
@@ -138,6 +142,7 @@ function StoryContent({ content }) {
 		"pre code": {
 			fontFamily: "var(--code-font) !important",
 			"&::before, &::after": { content: "none" },
+			color: "#d1d5db", //gray-300
 		},
 		"span.linenumber": {
 			display: "true !important",
@@ -145,9 +150,24 @@ function StoryContent({ content }) {
 		'[data="highlight"]': {
 			background: "var(--code-highlight)",
 		},
+		"li p": {
+			margin: 0,
+		},
 	});
 
 	const [codeCopied, setCodeCopied] = useState(false);
+
+	const extraHeading = (arr) => {
+		let heading = "";
+		for (let i = 0; i < arr.length; i++) {
+			if (arr[i]?.type !== undefined) {
+				for (let j = 0; j < arr[i].props.children.length; j++) {
+					heading += arr[i]?.props?.children[0];
+				}
+			} else heading += arr[i];
+		}
+		return heading;
+	};
 
 	const components = {
 		p: ({ node, children }) => {
@@ -168,7 +188,7 @@ function StoryContent({ content }) {
 				}
 
 				return (
-					<div className="w-full mt-8 mb-8">
+					<div className="w-full mb-4">
 						<Image
 							src={image.properties.src}
 							alt={image.properties.alt}
@@ -179,7 +199,7 @@ function StoryContent({ content }) {
 						/>
 						{hasCaption ? (
 							<div
-								className="mt-4 font-mono text-base italic font-medium text-center"
+								className="mb-4 font-mono text-lg italic font-medium text-center"
 								aria-label={caption}
 							>
 								{caption}
@@ -189,7 +209,7 @@ function StoryContent({ content }) {
 				);
 			}
 
-			return <p className="m-4">{children}</p>;
+			return <p className="mb-4">{children}</p>;
 		},
 		a: ({ href, children }) => {
 			if (href.match("http")) {
@@ -203,39 +223,25 @@ function StoryContent({ content }) {
 		},
 		h2: (props) => {
 			const arr = props.children;
-			let heading = "";
-
-			for (let i = 0; i < arr.length; i++) {
-				if (arr[i]?.type !== undefined) {
-					for (let j = 0; j < arr[i].props.children.length; j++) {
-						heading += arr[i]?.props?.children[0];
-					}
-				} else heading += arr[i];
-			}
-
+			const heading = extraHeading(arr);
 			const slug = generateSlug(heading);
+
 			return (
 				<h2 id={slug}>
-					<a href={`#${slug}`} {...props}></a>
+					{/* <a href={`#${slug}`} {...props}></a> */}
+					{heading}
 				</h2>
 			);
 		},
 		h3: (props) => {
 			const arr = props.children;
-			let heading = "";
-
-			for (let i = 0; i < arr.length; i++) {
-				if (arr[i]?.type !== undefined) {
-					for (let j = 0; j < arr[i].props.children.length; j++) {
-						heading += arr[i]?.props?.children[0];
-					}
-				} else heading += arr[i];
-			}
-
+			const heading = extraHeading(arr);
 			const slug = generateSlug(heading);
+
 			return (
 				<h3 id={slug}>
-					<a href={`#${slug}`} {...props}></a>
+					{/* <a href={`#${slug}`} {...props}></a> */}
+					{heading}
 				</h3>
 			);
 		},
@@ -251,10 +257,10 @@ function StoryContent({ content }) {
 			};
 
 			return (
-				<div className="relative group">
+				<div className="relative mb-4">
 					<button
 						className={classNames(
-							"copyCodeButton active:after:content-[var(--gicon-white-check)] hidden group-hover:block",
+							"copyCodeButton active:after:content-[var(--gicon-white-check)]",
 							{ "after:content-[var(--gicon-white-check)]": codeCopied },
 							{ "after:content-[var(--gicon-white-clone)]": !codeCopied }
 						)}
@@ -284,7 +290,7 @@ function StoryContent({ content }) {
 			return !inline && match ? (
 				<SyntaxHighlighter
 					className="codeStyle"
-					style={atomDark}
+					style={a11yDark}
 					language={match[1]}
 					PreTag="div"
 					showLineNumbers={true}
@@ -304,7 +310,7 @@ function StoryContent({ content }) {
 	};
 
 	return (
-		<article className="w-full max-w-3xl px-5 py-4 leading-normal prose prose-lg prose-li:marker:text-gray-700 dark:prose-invert prose-a:font-normal hover:prose-a:underline">
+		<article className="w-full px-5 py-4 story-content">
 			<ReactMarkdown
 				css={styleMarkdown}
 				remarkPlugins={[remarkGfm]}

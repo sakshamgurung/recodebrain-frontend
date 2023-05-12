@@ -21,7 +21,7 @@
 	--gicon-white-check: url("/icons/check_box_white.svg");
 	--icon-info: url("/icons/note-dark.svg");
 
-	--code-color-light: #5950bd;
+	--code-color-light: #3b30b2;
 	--code-color-dark: #38ca69;
 	--code-highlight: #374151;
 	--code-font: "JetBrains Mono", Monaco, "Courier New", monospace;
@@ -47,7 +47,7 @@ ins.adsbygoogle[data-ad-status="unfilled"] {
 }
 
 .copyCodeButton {
-	@apply z-10 absolute top-2 -right-6 bg-slate-700 hover:bg-slate-600 border-[1px] border-gray-500 rounded-md uppercase text-sm p-[.4rem_.3rem_.1rem] text-slate-100;
+	@apply z-10 absolute top-3 right-3 bg-slate-700 hover:bg-slate-600 border-[1px] border-gray-500 rounded-md uppercase text-sm p-[.4rem_.3rem_.1rem] text-slate-100;
 }
 
 .newsletter-input {
@@ -60,4 +60,18 @@ ins.adsbygoogle[data-ad-status="unfilled"] {
 
 .newsletter-bg-after-pattern {
 	@apply sm:after:block after:hidden after:rounded-l-md after:absolute after:content-[''] after:-z-10 after:w-full after:h-full after:bg-no-repeat after:top-0 after:right-0 after:rotate-180 after:bg-[url('/images/bauhaus-pattern.svg')];
+}
+
+.story-content {
+	@apply prose max-w-4xl
+	prose-li:p-0 prose-li:m-0 prose-li:mt-1 
+	prose-ol:m-0 prose-ol:mb-4 
+	prose-ul:m-0 prose-ul:mb-4
+	prose-h2:text-gray-800 prose-h3:text-gray-800 
+	prose-p:text-gray-800 prose-li:text-gray-800 
+	prose-a:font-normal prose-a:text-blue-600 hover:prose-a:underline prose-li:marker:text-slate-800 
+	dark:prose-invert
+	dark:prose-h2:text-slate-200 dark:prose-h3:text-slate-200 
+	dark:prose-p:text-slate-200 dark:prose-li:text-slate-200 
+	dark:prose-li:marker:text-slate-100;
 }
