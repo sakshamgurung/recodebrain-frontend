@@ -12,6 +12,7 @@ import {
 	AiFillTag,
 	AiFillInfoCircle,
 } from "react-icons/ai";
+import { BiSearch } from "react-icons/bi";
 
 import { useLoaded } from "../../store/customHook";
 
@@ -96,6 +97,15 @@ function MobileMenu({ isOpen, onClose, ...props }) {
 						<a className={anchorStyle} onClick={onClose}>
 							<AiFillHome className="flex-1 mr-4" size="26" />
 							<span className="flex-[10]">Home</span>
+							<AiOutlineRight className="flex-1" size="26" />
+						</a>
+					</Link>
+				</li>
+				<li className={listStyle}>
+					<Link href="/browse">
+						<a className={anchorStyle} onClick={onClose}>
+							<BiSearch className="flex-1 mr-4" size="26" />
+							<span className="flex-[10]">Browse</span>
 							<AiOutlineRight className="flex-1" size="26" />
 						</a>
 					</Link>

@@ -9,6 +9,10 @@ function DesktopMenu() {
 			title: "Home",
 		},
 		{
+			link: "/browse",
+			title: "Browse",
+		},
+		{
 			link: "/topics",
 			title: "Topics",
 		},
