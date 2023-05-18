@@ -14,7 +14,7 @@ function AllSerialPage(props) {
 	return (
 		<Fragment>
 			<Head>
-				<title>All Serial / Series | RecodeBrain</title>
+				<title>Serial / Series | RecodeBrain</title>
 				<meta
 					name="keywords"
 					content="Web, Software, Technology, Programming, JavaScript, React.js, React Native, Next.js"
