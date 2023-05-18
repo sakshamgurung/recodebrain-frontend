@@ -122,7 +122,7 @@ function MainNavigation() {
 	return (
 		<header
 			className={classNames(
-				"sticky top-0 z-20 flex items-center justify-between w-full h-16 pr-12 pl-1 lg:pl-12 py-10 bg-light dark:bg-dark transition-color ease-linear duration-200 ",
+				"sticky top-0 z-20 flex items-center justify-between w-full h-16 pr-12 pl-1 lg:pl-12 py-10 bg-light dark:bg-dark",
 				{ "shadow-lg dark:shadow-none": !clear }
 			)}
 		>
