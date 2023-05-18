@@ -65,12 +65,13 @@ function BrowsePage(props) {
 							onBlur={() => setIsFocused(false)}
 							type="search"
 							placeholder={"Search ..."}
-							className="w-full bg-gray-50 dark:bg-slate-800 border-[2px] border-r-0 border-transparent rounded-md rounded-r-none text-gray-900 dark:text-slate-300 text-lg p-2.5 focus:outline-none focus:border-blue-600"
+							className="w-full bg-gray-50 dark:bg-slate-800 border-[2px] border-r-0 border-transparent rounded-md rounded-r-none text-gray-900 dark:text-slate-300 text-lg p-2.5 focus:outline-none focus:border-blue-500"
 						/>
 						<div
 							className={classNames(
-								"relative flex items-center pr-2 border-[2px] border-l-0 border-transparent rounded-md rounded-l-none bg-gray-50 dark:bg-slate-800",
-								{ "border-blue-600": isFocused }
+								"relative flex items-center pr-2 border-[2px] border-l-0 rounded-md rounded-l-none bg-gray-50 dark:bg-slate-800",
+								{ "border-transparent": !isFocused },
+								{ "border-blue-500 border-solid": isFocused }
 							)}
 						>
 							{query === "" ? (
