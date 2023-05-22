@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaLinkedin, FaGithub, FaDev } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaDev, FaTwitter } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
 import { useTheme } from "next-themes";
 
@@ -36,7 +36,7 @@ function Footer(props) {
 	const connects = [
 		{
 			icons: <FaLinkedin size="26" />,
-			link: "https://www.linkedin.com/in/sakchhyam-gurung/",
+			link: "https://www.linkedin.com/company/recodebrain",
 			title: "LinkedIn",
 		},
 		{
@@ -48,6 +48,11 @@ function Footer(props) {
 			icons: <FaDev size="26" />,
 			link: "https://dev.to/sakshamgurung",
 			title: "Dev.to",
+		},
+		{
+			icons: <FaTwitter size="26" />,
+			link: "https://twitter.com/recodebrain",
+			title: "Twitter",
 		},
 	];
 
