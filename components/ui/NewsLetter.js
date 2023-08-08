@@ -1,7 +1,6 @@
 import { useEffect, useContext } from "react";
 
-import dynamic from "next/dynamic";
-const axios = dynamic(() => import("axios"));
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -38,28 +37,43 @@ function Newsletter() {
 		});
 
 		try {
-			const res = await axios.post("/api/newsletter", data, { timeout: 2000 });
+			const res = await axios.post("/api/newsletter", data, { timeout: 5000 });
+
+			let message = "";
+
+			if (res.data.message) {
+				if (res.data.message.title === "Member Resubscribed") {
+					message = "Submission successful. You are now resubscribed.";
+				}
+			} else {
+				message = "Submission successful. Please check your email for confirmation.";
+			}
+
 			notificationCtx.showNotification({
 				title: "Success!",
-				message: "Submission successful. Please check your email inbox for confirmation.",
+				message,
 				status: "success",
 			});
 		} catch (error) {
 			if (error.response) {
+				let title = "";
 				let message = "";
+
 				switch (error.response.data.message.title) {
 					case "Invalid Resource":
+						title = "Error!";
 						message = "Check for empty email or fake looking emails.";
 						break;
 					case "Member Exists":
-						message = "You are already subscribed for to our newsletter.";
+						title = "Member Exists";
+						message = "You are already subscribed to our newsletter.";
 						break;
 					default:
+						title = "Error!";
 						message = "Something went wrong!";
 				}
-
 				notificationCtx.showNotification({
-					title: "Error!",
+					title,
 					message,
 					status: "error",
 				});

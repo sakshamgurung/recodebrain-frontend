@@ -1,9 +1,8 @@
 import { useContext } from "react";
 
-import dynamic from "next/dynamic";
 import classNames from "classnames";
 import { AiFillCloseCircle } from "react-icons/ai";
-const NotificationContext = dynamic(() => import("../../store/notification-context"));
+import NotificationContext from "../../store/notification-context";
 
 function Notification(props) {
 	const notificationCtx = useContext(NotificationContext);
