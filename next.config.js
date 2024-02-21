@@ -17,6 +17,14 @@ const nextConfig = {
 	images: {
 		domains: ["localhost", "web-projects-media.sgp1.digitaloceanspaces.com"],
 	},
+	// 	rewrites: async () => {
+	// 		return [
+	// 			{
+	// 				source: "/privacy",
+	// 				destination: "/privacyPolicy.html",
+	// 			},
+	// 		];
+	// 	},
 };
 
 module.exports = nextConfig;

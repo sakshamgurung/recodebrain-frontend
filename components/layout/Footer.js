@@ -31,6 +31,11 @@ function Footer(props) {
 			link: "/about",
 			title: "About",
 		},
+		{
+			icons: <BiLinkExternal size="20" />,
+			link: "/privacy",
+			title: "Privacy",
+		},
 	];
 
 	const connects = [
