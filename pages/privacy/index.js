@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react/cjs/react.development";
+import React, { Fragment, useEffect, useState } from "react";
 
 import Head from "next/head"; // Adjust the import path as necessary
 import { useTheme } from "next-themes";
@@ -35,7 +35,7 @@ function PrivacyPolicy() {
 				<meta name="description" content="Privacy policy of recodebrain.com" />
 				<link rel="canonical" href={`${process.env.NEXT_PUBLIC_SITE_URL}/privacy}`} />
 			</Head>
-			<div className={`max-w-[1200px] m-auto mt-8 ${getTheme()}`}>
+			<div className={`max-w-[1200px] m-auto mt-8`}>
 				<div className="px-12 py-6 space-y-4 text-lg bg-white rounded-md shadow-md dark:shadow-none font-base">
 					<div dangerouslySetInnerHTML={{ __html: privacyPolicyHtml }} />
 				</div>
